@@ -2,7 +2,7 @@
 templateKey: index-page
 title: Slacker Society
 image: /img/adobestock_78622051.jpg
-heading: For Slackerz
+heading: For Slackers
 subheading: Video games, sports, and more.
 mainpitch:
   title: Why Kaldi
