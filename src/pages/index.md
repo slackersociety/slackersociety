@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-title: Slacker Society
-image: /img/adobestock_78622051.jpg
+title: SlackerSociety.com
+image: /img/products-grid1.jpg
 heading: For Slackers
 subheading: Video games, sports, and more.
 mainpitch:
