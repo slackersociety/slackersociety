@@ -1,0 +1,22 @@
+<svg id="grid_1_" data-name="grid (1)" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <g id="Group_3310" data-name="Group 3310">
+    <g id="Group_3309" data-name="Group 3309">
+      <path id="Path_21340" data-name="Path 21340" d="M8.444,0H.741A.743.743,0,0,0,0,.741v7.7a.743.743,0,0,0,.741.741h7.7a.743.743,0,0,0,.741-.741V.741A.743.743,0,0,0,8.444,0ZM7.7,7.7H1.481V1.481H7.7Z" fill="#292929"/>
+    </g>
+  </g>
+  <g id="Group_3312" data-name="Group 3312" transform="translate(10.815)">
+    <g id="Group_3311" data-name="Group 3311">
+      <path id="Path_21341" data-name="Path 21341" d="M154.444,0h-7.7A.743.743,0,0,0,146,.741v7.7a.743.743,0,0,0,.741.741h7.7a.743.743,0,0,0,.741-.741V.741A.743.743,0,0,0,154.444,0ZM153.7,7.7h-6.222V1.481H153.7Z" transform="translate(-146)" fill="#292929"/>
+    </g>
+  </g>
+  <g id="Group_3314" data-name="Group 3314" transform="translate(0 10.815)">
+    <g id="Group_3313" data-name="Group 3313">
+      <path id="Path_21342" data-name="Path 21342" d="M8.444,146H.741a.743.743,0,0,0-.741.741v7.7a.743.743,0,0,0,.741.741h7.7a.743.743,0,0,0,.741-.741v-7.7A.743.743,0,0,0,8.444,146ZM7.7,153.7H1.481v-6.222H7.7Z" transform="translate(0 -146)" fill="#292929"/>
+    </g>
+  </g>
+  <g id="Group_3316" data-name="Group 3316" transform="translate(10.815 10.815)">
+    <g id="Group_3315" data-name="Group 3315">
+      <path id="Path_21343" data-name="Path 21343" d="M154.444,146h-7.7a.743.743,0,0,0-.741.741v7.7a.743.743,0,0,0,.741.741h7.7a.743.743,0,0,0,.741-.741v-7.7A.743.743,0,0,0,154.444,146Zm-.741,7.7h-6.222v-6.222H153.7Z" transform="translate(-146 -146)" fill="#292929"/>
+    </g>
+  </g>
+</svg>

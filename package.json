@@ -1,50 +1,55 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Austin Green",
-  "dependencies": {
-    "bulma": "^0.8.0",
-    "gatsby": "^2.20.35",
-    "gatsby-image": "^2.3.5",
-    "gatsby-plugin-netlify": "^2.2.4",
-    "gatsby-plugin-netlify-cms": "^4.2.5",
-    "gatsby-plugin-purgecss": "^5.0.0",
-    "gatsby-plugin-react-helmet": "^3.2.5",
-    "gatsby-plugin-sass": "^2.2.4",
-    "gatsby-plugin-sharp": "^2.5.7",
-    "gatsby-remark-copy-linked-files": "^2.2.4",
-    "gatsby-remark-images": "^3.2.6",
-    "gatsby-remark-relative-images": "^0.3.0",
-    "gatsby-source-filesystem": "^2.2.5",
-    "gatsby-transformer-remark": "^2.7.5",
-    "gatsby-transformer-sharp": "^2.4.7",
-    "lodash": "^4.17.15",
-    "lodash-webpack-plugin": "^0.11.4",
-    "netlify-cms-app": "^2.9.6",
-    "netlify-cms-media-library-cloudinary": "^1.3.2",
-    "netlify-cms-media-library-uploadcare": "^0.5.2",
-    "node-sass": "^4.14.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-helmet": "^6.0.0",
-    "uuid": "^7.0.0"
-  },
-  "keywords": [
-    "gatsby"
+  "name": "story-hub",
+  "private": true,
+  "description": "Write your own story",
+  "version": "2.0.0",
+  "author": "RedQ, Inc",
+  "workspaces": [
+    "packages/*"
   ],
-  "license": "MIT",
-  "main": "n/a",
   "scripts": {
-    "clean": "gatsby clean",
-    "start": "npm run develop",
-    "build": "npm run clean && gatsby build",
-    "develop": "npm run clean && gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "lerna clean --yes && rimraf node_modules",
+    "clean:gatsby": "lerna run --parallel clean",
+    "dev:personal": "yarn workspace @blog/personal develop",
+    "build:personal": "yarn workspace @blog/personal build",
+    "serve:personal": "yarn workspace @blog/personal serve",
+    "dev:agency": "yarn workspace @blog/agency develop",
+    "build:agency": "yarn workspace @blog/agency build",
+    "serve:agency": "yarn workspace @blog/agency serve",
+    "dev:personal-minimal": "yarn workspace @blog/personal-minimal develop",
+    "build:personal-minimal": "yarn workspace @blog/personal-minimal build",
+    "serve:personal-minimal": "yarn workspace @blog/personal-minimal serve",
+    "dev:image": "yarn workspace @blog/image develop",
+    "build:image": "yarn workspace @blog/image build",
+    "serve:image": "yarn workspace @blog/image serve",
+    "dev:photography": "yarn workspace @blog/photography develop",
+    "build:photography": "yarn workspace @blog/photography build",
+    "serve:photography": "yarn workspace @blog/photography serve",
+    "dev:personal-lite": "yarn workspace @blog/personal-lite develop",
+    "build:personal-lite": "yarn workspace @blog/personal-lite build",
+    "serve:personal-lite": "yarn workspace @blog/personal-lite serve",
+    "dev:agency-modern": "yarn workspace @blog/modern-agency develop",
+    "build:agency-modern": "yarn workspace @blog/modern-agency build",
+    "serve:agency-modern": "yarn workspace @blog/modern-agency serve",
+    "dev:beauty": "yarn workspace @blog/beauty develop",
+    "build:beauty": "yarn workspace @blog/beauty build",
+    "serve:beauty": "yarn workspace @blog/beauty serve"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "husky": "^4.2.3",
+    "lerna": "^3.13.1",
+    "lint-staged": "^10.1.1",
+    "prettier": "^2.0.2",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,md,css}": [
+      "prettier --trailing-comma es5 --single-quote --write"
+    ]
   }
 }
