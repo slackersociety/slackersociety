@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Welcome to the Slacker Society.
-image: /img/adobestock_74838013.jpeg
+image: /img/pac.jpg
 heading: This is a blog.
 subheading: Where putting it off until tomorrow can wait.
 mainpitch:
@@ -14,14 +14,14 @@ description: The slacker society is what would happen if video games, pop
   blog.
 intro:
   blurbs:
-    - image: /img/nintendo.jpg
+    - image: /img/controlla.jpg
       text: Pokem ipsum dolor sit amet Fire you teach me and I'll teach you Bulbasaur
         Ralts Eelektrik Deerling. Qui officia deserunt mollit Absol Solrock
         Nidorino Teddiursa Cacnea Jesse. Water Wigglytuff Karrablast oh, you're
         my best friend Weepinbell Spinarak Stunky. Mirror Move Munchlax Azelf
         Axew Chimchar Yanma Venomoth. Leaf Green Wigglytuff Mareep I like shorts
         Munna Weepinbell Grass.
-    - image: /img/coffee-gear.png
+    - image: /img/podcast.jpg
       text: >
         We offer a small, but carefully curated selection of brewing gear and
         tools for every taste and experience level. No matter if you roast your
@@ -42,11 +42,12 @@ intro:
         coffee making techniques. All of the artwork on display there is for
         sale. The full price you pay goes to the artist.
   heading: What we offer
-  description: >
-    Kaldi is the ultimate spot for coffee lovers who want to learn about their
-    java’s origin and support the farmers that grew it. We take coffee
-    production, roasting and brewing seriously and we’re glad to pass that
-    knowledge to anyone. This is an edit via identity...
+  description: Leaf Green Archen you teach me and I'll teach you Klang Vileplume
+    Diglett Rotom. Pokemon Heroes Plain Badge Armaldo Larvitar I know it's my
+    destiny Dragonite Shedinja. Vermilion City Lilligant Skitty Swalot Houndoom
+    to denounce the evils of truth and love I wanna be the very best. Gotta
+    catch 'em all Regigigas Marsh Badge Mesprit Hoenn Darumaka Shuppet. Cerulean
+    City Eelektrik Aron Ninetales Weezing Kricketune Fire.
 main:
   heading: Great coffee with no compromises
   description: >
