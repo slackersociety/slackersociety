@@ -1,29 +1,26 @@
 ---
 templateKey: index-page
-title: SlackerSociety.com
-image: /img/products-grid1.jpg
-heading: For Slackers
-subheading: Video games, sports, and more.
+title: Welcome to the Slacker Society.
+image: /img/adobestock_74838013.jpeg
+heading: This is a blog.
+subheading: Where putting it off until tomorrow can wait.
 mainpitch:
-  title: Why Kaldi
-  description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+  title: What's going on here?
+  description: We're about to launch an awesome blog and podcast. Stay tuned for
+    the adventure of a lifetime.
+description: The slacker society is what would happen if video games, pop
+  culture, sports, entertainment, and science merged into a 'Megazord' of sorts.
+  You'll have to come back and visit for our gaming podcast, and miscellaneous
+  blog.
 intro:
   blurbs:
-    - image: /img/coffee.png
-      text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
+    - image: /img/nintendo.jpg
+      text: Pokem ipsum dolor sit amet Fire you teach me and I'll teach you Bulbasaur
+        Ralts Eelektrik Deerling. Qui officia deserunt mollit Absol Solrock
+        Nidorino Teddiursa Cacnea Jesse. Water Wigglytuff Karrablast oh, you're
+        my best friend Weepinbell Spinarak Stunky. Mirror Move Munchlax Azelf
+        Axew Chimchar Yanma Venomoth. Leaf Green Wigglytuff Mareep I like shorts
+        Munna Weepinbell Grass.
     - image: /img/coffee-gear.png
       text: >
         We offer a small, but carefully curated selection of brewing gear and
