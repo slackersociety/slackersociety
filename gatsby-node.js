@@ -1,87 +1,164 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const path = require(`path`);
+const _ = require('lodash');
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-  return graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              tags
-              templateKey
+  const blogPost = path.resolve(`./src/templates/blog-post.tsx`);
+  const blogList = path.resolve(`./src/templates/blog-list.tsx`);
+  const tagTemplate = path.resolve(`./src/templates/tags.tsx`);
+  const categoryTemplate = path.resolve(`./src/templates/category.tsx`);
+
+  return graphql(
+    `
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+                tags
+                categories
+                cover {
+                  publicURL
+                  childImageSharp {
+                    fluid(maxWidth: 480, maxHeight: 285, quality: 90) {
+                      srcWebp
+                    }
+                  }
+                }
+              }
             }
           }
         }
       }
-    }
-  `).then((result) => {
+    `
+  ).then(result => {
     if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      throw result.errors;
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    // Create blog posts pages.
+    const posts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach((edge) => {
-      const id = edge.node.id
+    posts.forEach((post, index) => {
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
+
       createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
+        path: post.node.fields.slug,
+        component: blogPost,
         context: {
-          id,
+          slug: post.node.fields.slug,
+          previous,
+          next,
+          tag: post.node.frontmatter.tags,
+          category: post.node.frontmatter.categories,
         },
-      })
-    })
+      });
+    });
+
+    // Create blog post list pages
+    const postsPerPage = 6;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/page/1` : `/page/${i + 1}`,
+        component: blogList,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      });
+    });
 
     // Tag pages:
-    let tags = []
+    let tags = [];
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
+    _.each(posts, edge => {
+      if (_.get(edge, 'node.frontmatter.tags')) {
+        tags = tags.concat(edge.node.frontmatter.tags);
       }
-    })
+    });
     // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    tags = _.uniq(tags);
 
     // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
+    tags.forEach(tag => {
       createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
+        path: `/tags/${_.kebabCase(tag)}/`,
+        component: tagTemplate,
         context: {
           tag,
         },
-      })
-    })
-  })
-}
+      });
+    });
+    // Category pages:
+    let categories = [];
+    // Iterate through each post, putting all found tags into `tags`
+    _.each(posts, edge => {
+      if (_.get(edge, 'node.frontmatter.categories')) {
+        categories = categories.concat(edge.node.frontmatter.categories);
+      }
+    });
+    // Eliminate duplicate tags
+    categories = _.uniq(categories);
+
+    // Make tag pages
+    categories.forEach(category => {
+      createPage({
+        path: `/category/${_.kebabCase(category)}/`,
+        component: categoryTemplate,
+        context: {
+          category,
+        },
+      });
+    });
+
+    return null;
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+    const value = createFilePath({ node, getNode });
+    if (typeof node.frontmatter.slug !== 'undefined') {
+      createNodeField({
+        node,
+        name: 'slug',
+        value: node.frontmatter.slug,
+      });
+    } else {
+      const value = createFilePath({ node, getNode });
+      createNodeField({
+        node,
+        name: 'slug',
+        value,
+      });
+    }
   }
-}
+};
+
+// for React-Hot-Loader: react-🔥-dom patch is not detected
+exports.onCreateWebpackConfig = ({ getConfig, stage }) => {
+  const config = getConfig();
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
+    };
+  }
+};
