@@ -1,0 +1,552 @@
+[INFO]-[2020/06/04 20:14:57] Cloning: slackerblogjune4's clone job's data is not in database, generating data
+[INFO]-[2020/06/04 20:14:57] Cloning: slackerblogjune4's clone job's data is not in database, generating data
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_actions
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_actions as wpstg0_actionscheduler_actions from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_actions
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_actions as wpstg0_actionscheduler_actions from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_claims
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_claims
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_groups
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_groups as wpstg0_actionscheduler_groups from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_groups
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_groups as wpstg0_actionscheduler_groups from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_logs
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_logs as wpstg0_actionscheduler_logs from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_actionscheduler_logs
+[INFO]-[2020/06/04 20:14:58] DB Copy: fsh_actionscheduler_logs as wpstg0_actionscheduler_logs from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_commentmeta
+[INFO]-[2020/06/04 20:14:58] DB Copy: Creating table wpstg0_commentmeta
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_comments
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_comments
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_links
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_links
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_options
+[INFO]-[2020/06/04 20:14:59] DB Copy: fsh_options as wpstg0_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_options
+[INFO]-[2020/06/04 20:14:59] DB Copy: fsh_options as wpstg0_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_postmeta
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_postmeta as wpstg0_postmeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:14:59] DB Copy: Creating table wpstg0_postmeta
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_postmeta as wpstg0_postmeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_posts
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_posts as wpstg0_posts from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_posts
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_posts as wpstg0_posts from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_smush_dir_images
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_smush_dir_images
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_term_relationships
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_term_relationships as wpstg0_term_relationships from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:00] DB Copy: Creating table wpstg0_term_relationships
+[INFO]-[2020/06/04 20:15:00] DB Copy: fsh_term_relationships as wpstg0_term_relationships from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_term_taxonomy
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_term_taxonomy as wpstg0_term_taxonomy from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_term_taxonomy
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_term_taxonomy as wpstg0_term_taxonomy from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_termmeta
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_termmeta as wpstg0_termmeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_termmeta
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_termmeta as wpstg0_termmeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_terms
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_terms as wpstg0_terms from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_terms
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_terms as wpstg0_terms from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_usermeta
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_usermeta as wpstg0_usermeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_usermeta
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_usermeta as wpstg0_usermeta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_users
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_users as wpstg0_users from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:01] DB Copy: Creating table wpstg0_users
+[INFO]-[2020/06/04 20:15:01] DB Copy: fsh_users as wpstg0_users from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_addon_netlify_options
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_addon_netlify_options as wpstg0_wp2static_addon_netlify_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_addon_netlify_options
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_addon_netlify_options as wpstg0_wp2static_addon_netlify_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_core_options
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_core_options as wpstg0_wp2static_core_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_core_options
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_core_options as wpstg0_wp2static_core_options from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_crawl_cache
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_crawl_cache as wpstg0_wp2static_crawl_cache from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_crawl_cache
+[INFO]-[2020/06/04 20:15:02] DB Copy: fsh_wp2static_crawl_cache as wpstg0_wp2static_crawl_cache from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_deploy_cache
+[INFO]-[2020/06/04 20:15:02] DB Copy: Creating table wpstg0_wp2static_deploy_cache
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_jobs
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_jobs as wpstg0_wp2static_jobs from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_jobs
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_jobs as wpstg0_wp2static_jobs from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_log
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_log as wpstg0_wp2static_log from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_log
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_log as wpstg0_wp2static_log from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_urls
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_urls as wpstg0_wp2static_urls from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wp2static_urls
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wp2static_urls as wpstg0_wp2static_urls from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wpforms_tasks_meta
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wpforms_tasks_meta as wpstg0_wpforms_tasks_meta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_wpforms_tasks_meta
+[INFO]-[2020/06/04 20:15:03] DB Copy: fsh_wpforms_tasks_meta as wpstg0_wpforms_tasks_meta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_xcloner_scheduler
+[INFO]-[2020/06/04 20:15:03] DB Copy: Creating table wpstg0_xcloner_scheduler
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_indexable
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_indexable as wpstg0_yoast_indexable from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_indexable
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_indexable as wpstg0_yoast_indexable from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_indexable_hierarchy
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_indexable_hierarchy as wpstg0_yoast_indexable_hierarchy from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_indexable_hierarchy
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_indexable_hierarchy as wpstg0_yoast_indexable_hierarchy from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_migrations
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_migrations as wpstg0_yoast_migrations from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_migrations
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_migrations as wpstg0_yoast_migrations from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_primary_term
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_primary_term as wpstg0_yoast_primary_term from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:04] DB Copy: Creating table wpstg0_yoast_primary_term
+[INFO]-[2020/06/04 20:15:04] DB Copy: fsh_yoast_primary_term as wpstg0_yoast_primary_term from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:05] DB Copy: Creating table wpstg0_yoast_seo_links
+[INFO]-[2020/06/04 20:15:05] DB Copy: fsh_yoast_seo_links as wpstg0_yoast_seo_links from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:05] DB Copy: Creating table wpstg0_yoast_seo_links
+[INFO]-[2020/06/04 20:15:05] DB Copy: fsh_yoast_seo_links as wpstg0_yoast_seo_links from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:05] DB Copy: Creating table wpstg0_yoast_seo_meta
+[INFO]-[2020/06/04 20:15:05] DB Copy: fsh_yoast_seo_meta as wpstg0_yoast_seo_meta from 0 to 10000 records
+[INFO]-[2020/06/04 20:15:05] DB Copy: Creating table wpstg0_yoast_seo_meta
+[INFO]-[2020/06/04 20:15:05] DB Copy: fsh_yoast_seo_meta as wpstg0_yoast_seo_meta from 0 to 10000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:05] DB Search & Replace:  Table wpstg0_actionscheduler_actions 0 to 5000 records
+[INFO]-[2020/06/04 20:15:05] DB Search & Replace:  Table wpstg0_actionscheduler_actions 0 to 5000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_actionscheduler_groups 0 to 5000 records
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_actionscheduler_groups 0 to 5000 records
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_actionscheduler_logs 0 to 5000 records
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_actionscheduler_logs 0 to 5000 records
+[]-[] 
+[]-[] 
+[]-[] 
+[]-[] 
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:06] DB Search & Replace:  Table wpstg0_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:07] DB Search & Replace:  Table wpstg0_postmeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:07] DB Search & Replace:  Table wpstg0_postmeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:07] DB Search & Replace:  Table wpstg0_posts 0 to 5000 records
+[INFO]-[2020/06/04 20:15:07] DB Search & Replace:  Table wpstg0_posts 0 to 5000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_term_relationships 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_term_relationships 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_term_taxonomy 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_term_taxonomy 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_termmeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_termmeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_terms 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_terms 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_usermeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:08] DB Search & Replace:  Table wpstg0_usermeta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_users 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_users 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_addon_netlify_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_addon_netlify_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_core_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_core_options 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_crawl_cache 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_crawl_cache 0 to 5000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_crawl_cache 5000 to 10000 records
+[INFO]-[2020/06/04 20:15:09] DB Search & Replace:  Table wpstg0_wp2static_crawl_cache 5000 to 10000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_jobs 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_jobs 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_log 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_log 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_urls 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_urls 0 to 5000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_urls 5000 to 10000 records
+[INFO]-[2020/06/04 20:15:10] DB Search & Replace:  Table wpstg0_wp2static_urls 5000 to 10000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_wpforms_tasks_meta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_wpforms_tasks_meta 0 to 5000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_indexable 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_indexable 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_indexable_hierarchy 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_indexable_hierarchy 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_migrations 0 to 5000 records
+[INFO]-[2020/06/04 20:15:11] DB Search & Replace:  Table wpstg0_yoast_migrations 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_primary_term 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_primary_term 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_seo_links 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_seo_links 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_seo_meta 0 to 5000 records
+[INFO]-[2020/06/04 20:15:12] DB Search & Replace:  Table wpstg0_yoast_seo_meta 0 to 5000 records
+[]-[] 
+[]-[] 
+[INFO]-[2020/06/04 20:15:12] Scanning / for files
+[INFO]-[2020/06/04 20:15:12] Scanning / for files
+[INFO]-[2020/06/04 20:15:13] Scanning wp-content folder /home/customer/www/slackersociety.xyz/public_html/wp-content
+[INFO]-[2020/06/04 20:15:13] Scanning wp-content folder /home/customer/www/slackersociety.xyz/public_html/wp-content
+[INFO]-[2020/06/04 20:15:13] Scanning /wp-includes for its sub-directories and files
+[INFO]-[2020/06/04 20:15:13] Scanning /wp-includes for its sub-directories and files
+[INFO]-[2020/06/04 20:15:13] Scanning /wp-admin for its sub-directories and files
+[INFO]-[2020/06/04 20:15:13] Scanning /wp-admin for its sub-directories and files
+[INFO]-[2020/06/04 20:15:14] Copying files...
+[INFO]-[2020/06/04 20:15:14] Total 50 files processed
+[INFO]-[2020/06/04 20:15:14] Copying files...
+[INFO]-[2020/06/04 20:15:14] Total 50 files processed
+[INFO]-[2020/06/04 20:15:14] Total 100 files processed
+[INFO]-[2020/06/04 20:15:14] Total 100 files processed
+[INFO]-[2020/06/04 20:15:14] Total 150 files processed
+[INFO]-[2020/06/04 20:15:14] Total 150 files processed
+[INFO]-[2020/06/04 20:15:14] Total 200 files processed
+[INFO]-[2020/06/04 20:15:14] Total 200 files processed
+[INFO]-[2020/06/04 20:15:14] Total 250 files processed
+[INFO]-[2020/06/04 20:15:14] Total 250 files processed
+[INFO]-[2020/06/04 20:15:15] Total 300 files processed
+[INFO]-[2020/06/04 20:15:15] Total 300 files processed
+[INFO]-[2020/06/04 20:15:15] Total 350 files processed
+[INFO]-[2020/06/04 20:15:15] Total 350 files processed
+[INFO]-[2020/06/04 20:15:15] Total 400 files processed
+[INFO]-[2020/06/04 20:15:15] Total 400 files processed
+[INFO]-[2020/06/04 20:15:15] Total 450 files processed
+[INFO]-[2020/06/04 20:15:15] Total 450 files processed
+[INFO]-[2020/06/04 20:15:15] Total 500 files processed
+[INFO]-[2020/06/04 20:15:15] Total 500 files processed
+[INFO]-[2020/06/04 20:15:16] Total 550 files processed
+[INFO]-[2020/06/04 20:15:16] Total 550 files processed
+[INFO]-[2020/06/04 20:15:16] Total 600 files processed
+[INFO]-[2020/06/04 20:15:16] Total 600 files processed
+[INFO]-[2020/06/04 20:15:16] Total 650 files processed
+[INFO]-[2020/06/04 20:15:16] Total 650 files processed
+[INFO]-[2020/06/04 20:15:16] Total 700 files processed
+[INFO]-[2020/06/04 20:15:16] Total 700 files processed
+[INFO]-[2020/06/04 20:15:16] Total 750 files processed
+[INFO]-[2020/06/04 20:15:16] Total 750 files processed
+[INFO]-[2020/06/04 20:15:16] Total 800 files processed
+[INFO]-[2020/06/04 20:15:16] Total 800 files processed
+[INFO]-[2020/06/04 20:15:17] Total 850 files processed
+[INFO]-[2020/06/04 20:15:17] Total 850 files processed
+[INFO]-[2020/06/04 20:15:17] Total 900 files processed
+[INFO]-[2020/06/04 20:15:17] Total 900 files processed
+[INFO]-[2020/06/04 20:15:17] Total 950 files processed
+[INFO]-[2020/06/04 20:15:17] Total 950 files processed
+[INFO]-[2020/06/04 20:15:17] Total 1000 files processed
+[INFO]-[2020/06/04 20:15:17] Total 1000 files processed
+[INFO]-[2020/06/04 20:15:17] Total 1050 files processed
+[INFO]-[2020/06/04 20:15:17] Total 1050 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1100 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1100 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1150 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1150 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1200 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1200 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1250 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1250 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1300 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1300 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1350 files processed
+[INFO]-[2020/06/04 20:15:18] Total 1350 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1400 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1400 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1450 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1450 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1500 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1500 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1550 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1550 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1600 files processed
+[INFO]-[2020/06/04 20:15:19] Total 1600 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1650 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1650 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1700 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1700 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1750 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1750 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1800 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1800 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1850 files processed
+[INFO]-[2020/06/04 20:15:20] Total 1850 files processed
+[INFO]-[2020/06/04 20:15:21] Total 1900 files processed
+[INFO]-[2020/06/04 20:15:21] Total 1900 files processed
+[INFO]-[2020/06/04 20:15:21] Total 1950 files processed
+[INFO]-[2020/06/04 20:15:21] Total 1950 files processed
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2012/08/rps_logo.png -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2012/08/rps_logo.png
+[INFO]-[2020/06/04 20:15:21] Total 2000 files processed
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2012/08/rps_logo.png -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2012/08/rps_logo.png
+[INFO]-[2020/06/04 20:15:21] Total 2000 files processed
+[INFO]-[2020/06/04 20:15:21] Total 2050 files processed
+[INFO]-[2020/06/04 20:15:21] Total 2050 files processed
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/neonbrand-UegcSdRtmlg-unsplash.jpg -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/neonbrand-UegcSdRtmlg-unsplash.jpg
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/kigoa-football-on-green-grass-during-daytime-209956.jpg -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/kigoa-football-on-green-grass-during-daytime-209956.jpg
+[INFO]-[2020/06/04 20:15:21] Total 2100 files processed
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/neonbrand-UegcSdRtmlg-unsplash.jpg -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/neonbrand-UegcSdRtmlg-unsplash.jpg
+[INFO]-[2020/06/04 20:15:21] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/kigoa-football-on-green-grass-during-daytime-209956.jpg -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/uploads/backup/2020/05/kigoa-football-on-green-grass-during-daytime-209956.jpg
+[INFO]-[2020/06/04 20:15:21] Total 2100 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2150 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2150 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2200 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2200 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2250 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2250 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2300 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2300 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2350 files processed
+[INFO]-[2020/06/04 20:15:22] Total 2350 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2400 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2400 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2450 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2450 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2500 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2500 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2550 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2550 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2600 files processed
+[INFO]-[2020/06/04 20:15:23] Total 2600 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2650 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2650 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2700 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2700 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2750 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2750 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2800 files processed
+[INFO]-[2020/06/04 20:15:24] Total 2800 files processed
+[INFO]-[2020/06/04 20:15:25] Total 2850 files processed
+[INFO]-[2020/06/04 20:15:25] Total 2850 files processed
+[INFO]-[2020/06/04 20:15:26] Total 2900 files processed
+[INFO]-[2020/06/04 20:15:26] Total 2900 files processed
+[INFO]-[2020/06/04 20:15:27] Total 2950 files processed
+[INFO]-[2020/06/04 20:15:27] Total 2950 files processed
+[INFO]-[2020/06/04 20:15:28] Total 3000 files processed
+[INFO]-[2020/06/04 20:15:28] Total 3000 files processed
+[INFO]-[2020/06/04 20:15:29] Total 3050 files processed
+[INFO]-[2020/06/04 20:15:29] Total 3050 files processed
+[INFO]-[2020/06/04 20:15:30] Total 3100 files processed
+[INFO]-[2020/06/04 20:15:30] Total 3100 files processed
+[INFO]-[2020/06/04 20:15:31] Total 3150 files processed
+[INFO]-[2020/06/04 20:15:31] Total 3150 files processed
+[INFO]-[2020/06/04 20:15:32] Total 3200 files processed
+[INFO]-[2020/06/04 20:15:32] Total 3200 files processed
+[INFO]-[2020/06/04 20:15:33] Total 3250 files processed
+[INFO]-[2020/06/04 20:15:33] Total 3250 files processed
+[INFO]-[2020/06/04 20:15:34] Total 3300 files processed
+[INFO]-[2020/06/04 20:15:34] Total 3300 files processed
+[INFO]-[2020/06/04 20:15:35] Total 3350 files processed
+[INFO]-[2020/06/04 20:15:35] Total 3350 files processed
+[INFO]-[2020/06/04 20:15:36] Total 3400 files processed
+[INFO]-[2020/06/04 20:15:36] Total 3400 files processed
+[INFO]-[2020/06/04 20:15:37] Total 3450 files processed
+[INFO]-[2020/06/04 20:15:37] Total 3450 files processed
+[INFO]-[2020/06/04 20:15:38] Total 3500 files processed
+[INFO]-[2020/06/04 20:15:38] Total 3500 files processed
+[INFO]-[2020/06/04 20:15:39] Total 3550 files processed
+[INFO]-[2020/06/04 20:15:39] Total 3550 files processed
+[INFO]-[2020/06/04 20:15:40] Total 3600 files processed
+[INFO]-[2020/06/04 20:15:40] Total 3600 files processed
+[INFO]-[2020/06/04 20:15:41] Total 3650 files processed
+[INFO]-[2020/06/04 20:15:41] Total 3650 files processed
+[INFO]-[2020/06/04 20:15:42] Total 3700 files processed
+[INFO]-[2020/06/04 20:15:42] Total 3700 files processed
+[INFO]-[2020/06/04 20:15:43] Total 3750 files processed
+[INFO]-[2020/06/04 20:15:43] Total 3750 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3800 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3800 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3850 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3850 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3900 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3900 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3950 files processed
+[INFO]-[2020/06/04 20:15:44] Total 3950 files processed
+[INFO]-[2020/06/04 20:15:44] Total 4000 files processed
+[INFO]-[2020/06/04 20:15:44] Total 4000 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4050 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4050 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4100 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4100 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4150 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4150 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4200 files processed
+[INFO]-[2020/06/04 20:15:45] Total 4200 files processed
+[INFO]-[2020/06/04 20:15:45] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/plugins/wordpress-seo/js/dist/analysis-1420.js -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/plugins/wordpress-seo/js/dist/analysis-1420.js
+[INFO]-[2020/06/04 20:15:45] Total 4250 files processed
+[INFO]-[2020/06/04 20:15:45] Trying to copy big file: /home/customer/www/slackersociety.xyz/public_html/wp-content/uploads/wp2static-processed-site/wp-content/plugins/wordpress-seo/js/dist/analysis-1420.js -> /home/customer/www/slackersociety.xyz/public_html/slackerblogjune4/wp-content/uploads/wp2static-processed-site/wp-content/plugins/wordpress-seo/js/dist/analysis-1420.js
+[INFO]-[2020/06/04 20:15:45] Total 4250 files processed
+[INFO]-[2020/06/04 20:15:46] Total 4300 files processed
+[INFO]-[2020/06/04 20:15:46] Total 4300 files processed
+[INFO]-[2020/06/04 20:15:46] Total 4350 files processed
+[INFO]-[2020/06/04 20:15:46] Total 4350 files processed
+[INFO]-[2020/06/04 20:15:47] Total 4400 files processed
+[INFO]-[2020/06/04 20:15:47] Total 4400 files processed
+[INFO]-[2020/06/04 20:15:48] Total 4450 files processed
+[INFO]-[2020/06/04 20:15:48] Total 4450 files processed
+[INFO]-[2020/06/04 20:15:49] Total 4500 files processed
+[INFO]-[2020/06/04 20:15:49] Total 4500 files processed
+[INFO]-[2020/06/04 20:15:50] Total 4550 files processed
+[INFO]-[2020/06/04 20:15:50] Total 4550 files processed
+[INFO]-[2020/06/04 20:15:51] Total 4600 files processed
+[INFO]-[2020/06/04 20:15:51] Total 4600 files processed
+[INFO]-[2020/06/04 20:15:52] Total 4650 files processed
+[INFO]-[2020/06/04 20:15:52] Total 4650 files processed
+[INFO]-[2020/06/04 20:15:53] Total 4700 files processed
+[INFO]-[2020/06/04 20:15:53] Total 4700 files processed
+[INFO]-[2020/06/04 20:15:54] Total 4750 files processed
+[INFO]-[2020/06/04 20:15:54] Total 4750 files processed
+[INFO]-[2020/06/04 20:15:55] Total 4800 files processed
+[INFO]-[2020/06/04 20:15:55] Total 4800 files processed
+[INFO]-[2020/06/04 20:15:56] Total 4850 files processed
+[INFO]-[2020/06/04 20:15:56] Total 4850 files processed
+[INFO]-[2020/06/04 20:15:57] Total 4900 files processed
+[INFO]-[2020/06/04 20:15:57] Total 4900 files processed
+[INFO]-[2020/06/04 20:15:58] Total 4950 files processed
+[INFO]-[2020/06/04 20:15:58] Total 4950 files processed
+[INFO]-[2020/06/04 20:15:59] Total 5000 files processed
+[INFO]-[2020/06/04 20:15:59] Total 5000 files processed
+[INFO]-[2020/06/04 20:16:00] Total 5050 files processed
+[INFO]-[2020/06/04 20:16:00] Total 5050 files processed
+[INFO]-[2020/06/04 20:16:01] Total 5100 files processed
+[INFO]-[2020/06/04 20:16:01] Total 5100 files processed
+[INFO]-[2020/06/04 20:16:02] Total 5150 files processed
+[INFO]-[2020/06/04 20:16:02] Total 5150 files processed
+[INFO]-[2020/06/04 20:16:03] Total 5200 files processed
+[INFO]-[2020/06/04 20:16:03] Total 5200 files processed
+[INFO]-[2020/06/04 20:16:04] Total 5250 files processed
+[INFO]-[2020/06/04 20:16:04] Total 5250 files processed
+[INFO]-[2020/06/04 20:16:05] Total 5300 files processed
+[INFO]-[2020/06/04 20:16:05] Total 5300 files processed
+[INFO]-[2020/06/04 20:16:06] Total 5350 files processed
+[INFO]-[2020/06/04 20:16:06] Total 5350 files processed
+[INFO]-[2020/06/04 20:16:07] Total 5400 files processed
+[INFO]-[2020/06/04 20:16:07] Total 5400 files processed
+[INFO]-[2020/06/04 20:16:08] Total 5450 files processed
+[INFO]-[2020/06/04 20:16:08] Total 5450 files processed
+[INFO]-[2020/06/04 20:16:09] Total 5500 files processed
+[INFO]-[2020/06/04 20:16:09] Total 5500 files processed
+[INFO]-[2020/06/04 20:16:10] Total 5550 files processed
+[INFO]-[2020/06/04 20:16:10] Total 5550 files processed
+[INFO]-[2020/06/04 20:16:11] Total 5600 files processed
+[INFO]-[2020/06/04 20:16:11] Total 5600 files processed
+[INFO]-[2020/06/04 20:16:12] Total 5650 files processed
+[INFO]-[2020/06/04 20:16:12] Total 5650 files processed
+[INFO]-[2020/06/04 20:16:13] Total 5700 files processed
+[INFO]-[2020/06/04 20:16:13] Total 5700 files processed
+[INFO]-[2020/06/04 20:16:14] Total 5750 files processed
+[INFO]-[2020/06/04 20:16:14] Total 5750 files processed
+[INFO]-[2020/06/04 20:16:15] Total 5800 files processed
+[INFO]-[2020/06/04 20:16:15] Total 5800 files processed
+[INFO]-[2020/06/04 20:16:16] Total 5850 files processed
+[INFO]-[2020/06/04 20:16:16] Total 5850 files processed
+[INFO]-[2020/06/04 20:16:17] Total 5900 files processed
+[INFO]-[2020/06/04 20:16:17] Total 5900 files processed
+[INFO]-[2020/06/04 20:16:18] Total 5950 files processed
+[INFO]-[2020/06/04 20:16:18] Total 5950 files processed
+[INFO]-[2020/06/04 20:16:19] Total 6000 files processed
+[INFO]-[2020/06/04 20:16:19] Total 6000 files processed
+[INFO]-[2020/06/04 20:16:20] Total 6050 files processed
+[INFO]-[2020/06/04 20:16:20] Total 6050 files processed
+[INFO]-[2020/06/04 20:16:21] Total 6100 files processed
+[INFO]-[2020/06/04 20:16:21] Total 6100 files processed
+[INFO]-[2020/06/04 20:16:22] Total 6150 files processed
+[INFO]-[2020/06/04 20:16:22] Total 6150 files processed
+[INFO]-[2020/06/04 20:16:23] Total 6200 files processed
+[INFO]-[2020/06/04 20:16:23] Total 6200 files processed
+[INFO]-[2020/06/04 20:16:24] Total 6250 files processed
+[INFO]-[2020/06/04 20:16:24] Total 6250 files processed
+[INFO]-[2020/06/04 20:16:25] Total 6300 files processed
+[INFO]-[2020/06/04 20:16:25] Total 6300 files processed
+[INFO]-[2020/06/04 20:16:26] Total 6350 files processed
+[INFO]-[2020/06/04 20:16:26] Total 6350 files processed
+[INFO]-[2020/06/04 20:16:27] Total 6400 files processed
+[INFO]-[2020/06/04 20:16:27] Total 6400 files processed
+[INFO]-[2020/06/04 20:16:28] Total 6450 files processed
+[INFO]-[2020/06/04 20:16:28] Total 6450 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6500 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6500 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6550 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6550 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6600 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6600 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6650 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6650 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6700 files processed
+[INFO]-[2020/06/04 20:16:29] Total 6700 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6750 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6750 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6800 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6800 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6850 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6850 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6900 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6900 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6950 files processed
+[INFO]-[2020/06/04 20:16:30] Total 6950 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7000 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7000 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7050 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7050 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7100 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7100 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7150 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7150 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7200 files processed
+[INFO]-[2020/06/04 20:16:31] Total 7200 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7250 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7250 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7300 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7300 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7350 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7350 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7400 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7400 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7450 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7450 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7500 files processed
+[INFO]-[2020/06/04 20:16:32] Total 7500 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7550 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7550 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7600 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7600 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7650 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7650 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7700 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7700 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7750 files processed
+[INFO]-[2020/06/04 20:16:33] Total 7750 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7800 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7800 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7850 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7850 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7900 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7900 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7950 files processed
+[INFO]-[2020/06/04 20:16:34] Total 7950 files processed
+[INFO]-[2020/06/04 20:16:34] Total 8000 files processed
+[INFO]-[2020/06/04 20:16:34] Total 8000 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8050 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8050 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8100 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8100 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8150 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8150 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8200 files processed
+[INFO]-[2020/06/04 20:16:35] Total 8200 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8250 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8250 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8300 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8300 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8350 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8350 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8400 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8400 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8450 files processed
+[INFO]-[2020/06/04 20:16:36] Total 8450 files processed
+[INFO]-[2020/06/04 20:16:37] Total 8500 files processed
+[INFO]-[2020/06/04 20:16:37] Total 8500 files processed
+[INFO]-[2020/06/04 20:16:37] Total 8550 files processed
+[INFO]-[2020/06/04 20:16:37] Total 8550 files processed
+[INFO]-[2020/06/04 20:16:39] Verifying existing clones...
+[INFO]-[2020/06/04 20:16:39] Delete: Nothing to save.'
+[INFO]-[2020/06/04 20:16:39] Verifying existing clones...
+[INFO]-[2020/06/04 20:16:39] Delete: Nothing to save.'

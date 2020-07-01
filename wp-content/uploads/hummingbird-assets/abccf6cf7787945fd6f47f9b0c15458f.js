@@ -1,0 +1,2 @@
+/**handles:mpp_gutenberg_tabs**/
+jQuery(document).ready(function(a){a(".mpp-gutenberg-tab").on("click",function(t){a(".mpp-author-tabs li").removeClass("active"),a(this).addClass("active");var e=a(".mpp-tab").removeClass("mpp-tab-active"),s=a(this).data("tab");a("."+s).addClass("mpp-tab-active")})});
