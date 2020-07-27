@@ -75,7 +75,8 @@ function sfsi_float_widget(s) {
          (window.removeEventListener("scroll", i), 
           a -= r * o, 
           SFSI("#sfsi_floater").css({
-            top:(a + t).toString() + "px"
+            top:Math.round((a + t).toString()) + "px",
+            transition: "all 0.6s ease 0s"
           }), 
           setTimeout(i, n)) :
         window.addEventListener("scroll", i, !1);
@@ -283,7 +284,8 @@ SFSI(document).ready(function(s) {
         SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-effect") && "fade_in" == SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-effect") && SFSI(this).children("div.inerCnt").find("a.sficn").css("opacity", "0.6"), 
         SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-effect") && "scale" == SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-effect") && SFSI(this).children("div.inerCnt").find("a.sficn").removeClass("scale"), 
         SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-ffect") && "combo" == SFSI(this).children("div.inerCnt").children("a.sficn").attr("data-effect")/*  && SFSI(this).children("div.inerCnt").find("a.sficn").css("opacity", "0.6"), */
-		}), SFSI("body").on("click", function(){
+        SFSI(this).parent("div").find("div.sfsi_tool_tip_2").css("display", "none");
+    }), SFSI("body").on("click", function(){
         SFSI(".inerCnt").find("div.sfsi_tool_tip_2").hide();
     }), SFSI(".adminTooltip >a").on("hover", function() {
         SFSI(this).offset().top, SFSI(this).parent("div").find("div.sfsi_tool_tip_2_inr").css("opacity", "1"), 

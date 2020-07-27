@@ -102,6 +102,7 @@ a.sfsi_disable_usm_ogtags_setting_change {color: #444;cursor: pointer;font-weigh
     display: flex;
     padding: 11px 20px;
     margin:15px 40px;
+    border-radius: 10px;
 }
 
 .sfsi_new_prmium_follw p a {

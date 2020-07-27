@@ -347,7 +347,7 @@ label.toglpstpgsbttl {
     margin-right: 18px;
     display: block;
     float: left;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 46px;
 }
@@ -1311,7 +1311,7 @@ ul.icn_listing li .right_info a {
 }
 
 .tab2 .twt_fld {
-    margin: 16px 0 23px;
+    margin: 18px 0 23px;
     float: left;
 }
 
@@ -1477,7 +1477,7 @@ ul.tab_3_list li span {
 }
 
 .tab7 .pop_up_show label {
-    font-family: helveticaregular !important;
+    font-family: helveticaneue-light !important;
 }
 
 .tab7 .save_button {
@@ -1500,6 +1500,7 @@ ul.tab_3_list li span {
 #accordion .tab2 .facebook_section .inr_cont p.extra_sp,
 #accordion1 .tab2 .facebook_section .inr_cont p.extra_sp {
     padding-top: 7px;
+   
 }
 
 .tab2 .custom_section {
@@ -1783,7 +1784,7 @@ h2.optional {
 .fb_tool_bdr .sfsi_inside .icon2 {
     margin: 2px 0 3px 0 !important;
     height: auto;
-    width: 53px;
+    width: 60px;
     display: inline-block;
     overflow: hidden;
 }
@@ -1816,7 +1817,7 @@ h2.optional {
     height: auto;
     display: inline-block;
     float: none;
-    width: 73px;
+    width: 64px;
 }
 
 .printst_tool_bdr .sfsi_inside .icon2 {
@@ -2045,10 +2046,11 @@ h2.optional {
     float: none;
     /* height: 20px;*/
     width: 100%;
+    text-align: initial;
 }
 
 .linkedin_tool_bdr .sfsi_inside .icon2 {
-    margin: 2px 0 2px 0px;
+    margin: 2px 19px 2px 0px;
     display: inline-block;
     float: none;
     /* height: 20px;*/
@@ -2056,7 +2058,7 @@ h2.optional {
 }
 
 .linkedin_tool_bdr .sfsi_inside .icon3 {
-    margin: 2px 0 2px 0px;
+    margin: 2px 19px 2px 0px;
     display: inline-block;
     float: none;
     /* height: 20px;*/
@@ -2149,12 +2151,12 @@ h2.optional {
 }
 
 .adminTooltip {
-    left: 142px;
+    left: 118px;
     position: absolute;
 }
 
 .adPopWidth {
-    min-height: 100px !important;
+    min-height: 136px !important;
 }
 
 .main_contant p>a.lit_txt,
@@ -2172,7 +2174,7 @@ h2.optional {
 }
 
 .linkedin_section .link_4>label.anthr_labl {
-    height: 94px;
+    height: 60px;
 }
 
 .mediam_txt {
@@ -3661,7 +3663,6 @@ ul.sfsi_icn_listing8 li .tb_4_ck{
     margin: 0 4px!important;
     line-height: unset!important;
     width: unset!important;
-    height: 20px!important;
     text-align: unset!important;
     max-width: 100%!important;
 }

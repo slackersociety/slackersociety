@@ -2016,6 +2016,7 @@ ul.tab_2_email_sec li .radio {
     padding: 0 20px;
     vertical-align: top;
     width: 72%;
+    font-family: helveticaneue-light !important;
 }
 .tab8 .row_tab {
     display: inline-block;
@@ -2351,6 +2352,7 @@ ul.sfsi_floaticon_margin_sec li ins {
     background: #f3faf6;
     border: 1px solid #12a252;
     padding: 25px 38px 35px 40px;
+    border-radius: 10px;
     /* float: left; */
     clear: both;
 }
@@ -3539,7 +3541,7 @@ div#sfsi_error_reporting_notice {
     clear: both;
 }
 .show {
-    display: block;
+    display: flow-root;
 }
 .hide {
     display: none;
@@ -4115,6 +4117,7 @@ div#sfsi_error_reporting_notice {
 .sfsi_font_inherit {
     font-family: inherit !important;
     border: 0 !important;
+    text-decoration: none !important;
 }
 
 .pop-up {
