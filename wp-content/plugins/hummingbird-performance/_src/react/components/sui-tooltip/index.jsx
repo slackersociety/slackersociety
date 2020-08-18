@@ -11,7 +11,7 @@ import classNames from 'classnames';
  * @param {React.Component} data     Should the tooltip wrap around a component.
  * @param {Array}           classes  Tooltip classes.
  * @return {*} Tooltip component.
- * @constructor
+ * @class
  */
 export default function Tooltip( { text, data, classes } ) {
 	const combinedClasses = classNames( 'sui-tooltip', classes );

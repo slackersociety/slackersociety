@@ -27,7 +27,8 @@ import Fetcher from '../utils/fetcher';
 			spinner.addClass( 'visible' );
 			button.addClass( 'disabled' );
 
-			Fetcher.cloudflare.setExpiration( $( selector ).val() )
+			Fetcher.cloudflare
+				.setExpiration( $( selector ).val() )
 				.then( ( response ) => {
 					//window.location.reload();
 					$( '#wphb-expiry-change-notice' ).hide();
@@ -35,12 +36,20 @@ import Fetcher from '../utils/fetcher';
 					button.removeClass( 'disabled' );
 
 					if ( 'undefined' !== typeof response && response.success ) {
-						WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success' );
+						WPHB_Admin.notices.show(
+							'wphb-ajax-update-notice',
+							true,
+							'success'
+						);
 					} else {
-						WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'error', wphb.strings.errorSettingsUpdate );
+						WPHB_Admin.notices.show(
+							'wphb-ajax-update-notice',
+							true,
+							'error',
+							wphb.strings.errorSettingsUpdate
+						);
 					}
 				} );
 		},
-
 	};
-}( jQuery ) );
+} )( jQuery );

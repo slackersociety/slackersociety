@@ -13,3 +13,4 @@ require( '@wpmudev/shared-ui/dist/js/_src/select2.full' );
 require( '@wpmudev/shared-ui/dist/js/_src/tabs' );
 require( '@wpmudev/shared-ui/dist/js/_src/side-tabs' );
 require( '@wpmudev/shared-ui/dist/js/_src/reviews' );
+require( '@wpmudev/shared-ui/dist/js/_src/sticky-box' );

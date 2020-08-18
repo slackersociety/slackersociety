@@ -13,10 +13,9 @@ const MinificationScanner = ( totalSteps, currentStep ) => {
 				// Scan started on a previous page load
 				step( remainingSteps );
 			} else {
-				Fetcher.minification.startCheck()
-					.then( () => {
-						step( remainingSteps );
-					} );
+				Fetcher.minification.startCheck().then( () => {
+					step( remainingSteps );
+				} );
 			}
 		},
 		cancel() {
@@ -28,7 +27,13 @@ const MinificationScanner = ( totalSteps, currentStep ) => {
 				return 0;
 			}
 			const remainingSteps = totalSteps - currentStep;
-			return Math.min( Math.round( ( parseInt( ( totalSteps - remainingSteps ) ) * 100 ) / totalSteps ), 99 );
+			return Math.min(
+				Math.round(
+					( parseInt( totalSteps - remainingSteps ) * 100 ) /
+						totalSteps
+				),
+				99
+			);
 		},
 		// Overridable functions
 		onFinishStep( progress ) {},
@@ -36,11 +41,18 @@ const MinificationScanner = ( totalSteps, currentStep ) => {
 			WPHB_Admin.minification.updateProgressBar( 100 );
 
 			if ( 'undefined' !== typeof response.assets_msg ) {
-				jQuery( '.wphb-assets-modal' ).find( '#assetsFound' ).html( response.assets_msg );
+				jQuery( '.wphb-assets-modal' )
+					.find( '#assetsFound' )
+					.html( response.assets_msg );
 			}
 
 			window.SUI.closeModal(); // Hide the check-files-modal modal.
-			window.SUI.openModal( 'wphb-assets-modal', 'wpbody-content', undefined, false );
+			window.SUI.openModal(
+				'wphb-assets-modal',
+				'wpbody-content',
+				undefined,
+				false
+			);
 		},
 	};
 
@@ -54,17 +66,15 @@ const MinificationScanner = ( totalSteps, currentStep ) => {
 	const step = function( remainingSteps ) {
 		if ( remainingSteps >= 0 ) {
 			currentStep = totalSteps - remainingSteps;
-			Fetcher.minification.checkStep( currentStep )
-				.then( () => {
-					remainingSteps = remainingSteps - 1;
-					obj.onFinishStep( obj.getProgress() );
-					step( remainingSteps );
-				} );
+			Fetcher.minification.checkStep( currentStep ).then( () => {
+				remainingSteps = remainingSteps - 1;
+				obj.onFinishStep( obj.getProgress() );
+				step( remainingSteps );
+			} );
 		} else {
-			Fetcher.minification.finishCheck()
-				.then( ( response ) => {
-					obj.onFinish( response );
-				} );
+			Fetcher.minification.finishCheck().then( ( response ) => {
+				obj.onFinish( response );
+			} );
 		}
 	};
 

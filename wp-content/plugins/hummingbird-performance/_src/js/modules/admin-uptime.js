@@ -1,6 +1,5 @@
 /* global WPHB_Admin */
 /* global wphbUptimeStrings */
-/* global wphb */
 /* global google */
 
 /**
@@ -28,13 +27,17 @@ import Fetcher from '../utils/fetcher';
 			this.dataRange = this.getUrlParameter( 'data-range' );
 
 			this.$dataRangeSelector.change( function() {
-				window.location.href = $( this ).find( ':selected' ).data( 'url' );
+				window.location.href = $( this )
+					.find( ':selected' )
+					.data( 'url' );
 			} );
 
 			const self = this;
 
 			if ( 'undefined' !== typeof google ) {
-				google.charts.load( 'current', { packages: [ 'corechart', 'timeline' ] } );
+				google.charts.load( 'current', {
+					packages: [ 'corechart', 'timeline' ],
+				} );
 			}
 
 			this.$disableUptime.on( 'click', function( e ) {
@@ -64,10 +67,14 @@ import Fetcher from '../utils/fetcher';
 			}
 
 			if ( null !== document.getElementById( 'uptime-chart' ) ) {
-				google.charts.setOnLoadCallback( () => this.drawResponseTimeChart() );
+				google.charts.setOnLoadCallback( () =>
+					this.drawResponseTimeChart()
+				);
 			}
 			if ( null !== document.getElementById( 'downtime-chart' ) ) {
-				google.charts.setOnLoadCallback( () => this.drawDowntimeChart() );
+				google.charts.setOnLoadCallback( () =>
+					this.drawDowntimeChart()
+				);
 			}
 
 			/* Re-check Uptime status */
@@ -77,29 +84,47 @@ import Fetcher from '../utils/fetcher';
 			} );
 
 			// Resend email verification.
-			$( '.wphb-resend-recipient' ).on( 'click', ( e ) => {
-				Fetcher.uptime.resendConfirmationEmail( e.currentTarget.dataset.name, e.currentTarget.dataset.email )
-					.then( ( response ) => {
-						WPHB_Admin.notices.show(
-							'wphb-ajax-update-notice',
-							false,
-							'success',
-							response.message,
-						);
-					} );
-			} );
+			$( '#wphb-uptime-reporting' ).on(
+				'click',
+				'.wphb-resend-recipient',
+				function( e ) {
+					const self = $( this );
+					self.attr( 'disabled', 'disabled' );
+					Fetcher.uptime
+						.resendConfirmationEmail(
+							e.currentTarget.dataset.name,
+							e.currentTarget.dataset.email
+						)
+						.then( ( response ) => {
+							WPHB_Admin.notices.show(
+								'wphb-ajax-update-notice',
+								false,
+								'success',
+								response.message
+							);
+							self.removeAttr( 'disabled' );
+						} );
+				}
+			);
 		},
 
 		drawResponseTimeChart() {
 			const data = new google.visualization.DataTable();
 			data.addColumn( 'datetime', 'Day' );
 			data.addColumn( 'number', 'Response Time (ms)' );
-			data.addColumn( { type: 'string', role: 'tooltip', p: { html: true } } );
+			data.addColumn( {
+				type: 'string',
+				role: 'tooltip',
+				p: { html: true },
+			} );
 			const chartArray = JSON.parse( this.chartData );
 			for ( let i = 0; i < chartArray.length; i++ ) {
 				chartArray[ i ][ 0 ] = new Date( chartArray[ i ][ 0 ] );
 				chartArray[ i ][ 1 ] = Math.round( chartArray[ i ][ 1 ] );
-				chartArray[ i ][ 2 ] = this.createUptimeTooltip( chartArray[ i ][ 0 ], chartArray[ i ][ 1 ] );
+				chartArray[ i ][ 2 ] = this.createUptimeTooltip(
+					chartArray[ i ][ 0 ],
+					chartArray[ i ][ 1 ]
+				);
 
 				/* brings the graph below the x axis */
 				if ( Math.round( chartArray[ i ][ 1 ] ) === 0 ) {
@@ -124,7 +149,7 @@ import Fetcher from '../utils/fetcher';
 					format: '#### ms',
 					gridlines: { count: 5 },
 					minorGridlines: { count: 0 },
-					viewWindow: { min: 0 }, /* don't display negative values */
+					viewWindow: { min: 0 } /* don't display negative values */,
 				},
 				hAxis: {
 					format: this.dateFormat,
@@ -141,7 +166,9 @@ import Fetcher from '../utils/fetcher';
 				},
 			};
 
-			const chart = new google.visualization.AreaChart( document.getElementById( 'uptime-chart' ) );
+			const chart = new google.visualization.AreaChart(
+				document.getElementById( 'uptime-chart' )
+			);
 			chart.draw( data, options );
 
 			$( window ).resize( function() {
@@ -155,7 +182,11 @@ import Fetcher from '../utils/fetcher';
 			const dataTable = new google.visualization.DataTable();
 			dataTable.addColumn( { type: 'string' } );
 			dataTable.addColumn( { type: 'string', id: 'Status' } );
-			dataTable.addColumn( { type: 'string', role: 'tooltip', p: { html: true } } );
+			dataTable.addColumn( {
+				type: 'string',
+				role: 'tooltip',
+				p: { html: true },
+			} );
 			dataTable.addColumn( { type: 'datetime', id: 'Start Period' } );
 			dataTable.addColumn( { type: 'datetime', id: 'End Period' } );
 			const chartArray = JSON.parse( this.downtimeChartData );
@@ -188,29 +219,44 @@ import Fetcher from '../utils/fetcher';
 				},
 				hAxis: {
 					format: this.dateFormat,
-
 				},
 				colors,
 				height: 170,
 			};
 			const origColors = [];
-			google.visualization.events.addListener( chart, 'ready', function() {
-				const bars = container.getElementsByTagName( 'rect' );
-				Array.prototype.forEach.call( bars, function( bar ) {
-					if ( parseFloat( bar.getAttribute( 'x' ) ) > 0 ) {
-						origColors.push( bar.getAttribute( 'fill' ) );
-					}
-				} );
-			} );
-			google.visualization.events.addListener( chart, 'onmouseover', function( e ) {
-				// set original color
-				const bars = container.getElementsByTagName( 'rect' );
-				bars[ bars.length - 1 ].setAttribute( 'fill', origColors[ e.row ] );
-				const width = bars[ bars.length - 1 ].getAttribute( 'width' );
-				if ( width > 3 ) {
-					bars[ bars.length - 1 ].setAttribute( 'width', ( width - 1 ) + 'px' );
+			google.visualization.events.addListener(
+				chart,
+				'ready',
+				function() {
+					const bars = container.getElementsByTagName( 'rect' );
+					Array.prototype.forEach.call( bars, function( bar ) {
+						if ( parseFloat( bar.getAttribute( 'x' ) ) > 0 ) {
+							origColors.push( bar.getAttribute( 'fill' ) );
+						}
+					} );
 				}
-			} );
+			);
+			google.visualization.events.addListener(
+				chart,
+				'onmouseover',
+				function( e ) {
+					// set original color
+					const bars = container.getElementsByTagName( 'rect' );
+					bars[ bars.length - 1 ].setAttribute(
+						'fill',
+						origColors[ e.row ]
+					);
+					const width = bars[ bars.length - 1 ].getAttribute(
+						'width'
+					);
+					if ( width > 3 ) {
+						bars[ bars.length - 1 ].setAttribute(
+							'width',
+							width - 1 + 'px'
+						);
+					}
+				}
+			);
 			chart.draw( dataTable, options );
 
 			$( window ).resize( function() {
@@ -220,23 +266,38 @@ import Fetcher from '../utils/fetcher';
 
 		createUptimeTooltip( date, responseTime ) {
 			const formattedDate = this.formatTooltipDate( date );
-			return '<span class="response-time-tooltip">' + responseTime + 'ms</span>' +
-				'<span class="uptime-date-tooltip">' + formattedDate + '</span>';
+			return (
+				'<span class="response-time-tooltip">' +
+				responseTime +
+				'ms</span>' +
+				'<span class="uptime-date-tooltip">' +
+				formattedDate +
+				'</span>'
+			);
 		},
 
 		formatTooltipDate( date ) {
 			const monthNames = [
-				'Jan', 'Feb', 'Mar',
-				'Apr', 'May', 'Jun',
-				'Jul', 'Aug', 'Sep',
-				'Oct', 'Nov', 'Dec',
+				'Jan',
+				'Feb',
+				'Mar',
+				'Apr',
+				'May',
+				'Jun',
+				'Jul',
+				'Aug',
+				'Sep',
+				'Oct',
+				'Nov',
+				'Dec',
 			];
 
 			const day = date.getDate();
 			const monthIndex = date.getMonth();
 			const hh = date.getHours();
 			let h = hh;
-			const minutes = ( date.getMinutes() < 10 ? '0' : '' ) + date.getMinutes();
+			const minutes =
+				( date.getMinutes() < 10 ? '0' : '' ) + date.getMinutes();
 			let dd = 'AM';
 			if ( h >= 12 ) {
 				h = hh - 12;
@@ -245,22 +306,34 @@ import Fetcher from '../utils/fetcher';
 			if ( h === 0 ) {
 				h = 12;
 			}
-			return monthNames[ monthIndex ] + ' ' + day + ' @ ' + h + ':' + minutes + dd;
+			return (
+				monthNames[ monthIndex ] +
+				' ' +
+				day +
+				' @ ' +
+				h +
+				':' +
+				minutes +
+				dd
+			);
 		},
 
 		getUrlParameter: function getUrlParameter( sParam ) {
-			const sPageURL = decodeURIComponent( window.location.search.substring( 1 ) ),
+			const sPageURL = decodeURIComponent(
+					window.location.search.substring( 1 )
+				),
 				sURLVariables = sPageURL.split( '&' );
-			let sParameterName,
-				i;
+			let sParameterName, i;
 
 			for ( i = 0; i < sURLVariables.length; i++ ) {
 				sParameterName = sURLVariables[ i ].split( '=' );
 
 				if ( sParameterName[ 0 ] === sParam ) {
-					return sParameterName[ 1 ] === undefined ? true : sParameterName[ 1 ];
+					return sParameterName[ 1 ] === undefined
+						? true
+						: sParameterName[ 1 ];
 				}
 			}
 		},
 	};
-}( jQuery ) );
+} )( jQuery );

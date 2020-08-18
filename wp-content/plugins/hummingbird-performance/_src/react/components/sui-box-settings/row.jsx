@@ -10,7 +10,7 @@ import React from 'react';
  * @param {string} description
  * @param {Object} content
  * @return {*} SettingsRow component.
- * @constructor
+ * @class
  */
 export default function SettingsRow( { label, description, content } ) {
 	return (
@@ -19,9 +19,7 @@ export default function SettingsRow( { label, description, content } ) {
 				<span className="sui-settings-label">{ label }</span>
 				<span className="sui-description">{ description }</span>
 			</div>
-			<div className="sui-box-settings-col-2">
-				{ content }
-			</div>
+			<div className="sui-box-settings-col-2">{ content }</div>
 		</div>
 	);
 }

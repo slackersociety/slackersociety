@@ -16,9 +16,18 @@ import classNames from 'classnames';
  * @param {boolean} disabled  Disabled or not.
  * @param {*}       onClick   onClick callback.
  * @return {*} Button component.
- * @constructor
+ * @class
  */
-export default function Button( { text, url, classes, id, icon, target, disabled = false, onClick } ) {
+export default function Button( {
+	text,
+	url,
+	classes,
+	id,
+	icon,
+	target,
+	disabled = false,
+	onClick,
+} ) {
 	if ( icon ) {
 		icon = <i className={ icon } aria-hidden="true" />;
 	}
@@ -29,7 +38,15 @@ export default function Button( { text, url, classes, id, icon, target, disabled
 	}
 
 	return (
-		<a className={ classNames( classes ) } href={ url } id={ id } target={ target } rel={ rel } disabled={ disabled } onClick={ onClick }>
+		<a
+			className={ classNames( classes ) }
+			href={ url }
+			id={ id }
+			target={ target }
+			rel={ rel }
+			disabled={ disabled }
+			onClick={ onClick }
+		>
 			{ icon }
 			{ text }
 		</a>

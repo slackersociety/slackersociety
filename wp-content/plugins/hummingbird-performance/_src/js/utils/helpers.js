@@ -3,19 +3,18 @@
  *
  * @param str
  *
- * @returns {*|string}
+ * @return {*|string}
  */
-export const __  = ( str ) => {
-    return wphb.strings[ str ] || '';
+export const __ = ( str ) => {
+	return wphb.strings[ str ] || '';
 };
 
 /**
  * Get a link to a HB screen
  *
  * @param {string} screen Screen slug
- * @returns {string}
+ * @return {string}
  */
 export const getLink = ( screen ) => {
-    return wphb.links[ screen ] || '';
+	return wphb.links[ screen ] || '';
 };
-

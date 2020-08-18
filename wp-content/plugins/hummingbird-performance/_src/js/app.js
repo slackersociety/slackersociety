@@ -14,4 +14,5 @@ require( './modules/admin-settings.js' );
 
 jQuery( document ).ready( function() {
 	window.WPHB_Admin.init();
+	window.WPHB_Admin.Tracking.init();
 } );

@@ -10,20 +10,21 @@ import React from 'react';
  * @param {number} value  Number of issues.
  * @param {string} type   Class to use when there are issues. Accepts: warning, error, success, info, etc.
  * @return {*} Tag component.
- * @constructor
+ * @class
  */
 export default function Tag( { value, type } ) {
 	if ( 0 === value && 'success' === type ) {
-		return <i className="sui-icon-check-tick sui-lg sui-success" aria-hidden="true" />;
+		return (
+			<i
+				className="sui-icon-check-tick sui-lg sui-success"
+				aria-hidden="true"
+			/>
+		);
 	}
 
 	const classes = 'sui-tag sui-tag-' + type;
 
-	return (
-		<span className={ classes }>
-			{ value }
-		</span>
-	);
+	return <span className={ classes }>{ value }</span>;
 }
 
 // Set default props

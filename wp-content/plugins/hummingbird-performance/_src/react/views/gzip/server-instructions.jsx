@@ -43,11 +43,19 @@ export default class ServerInstructions extends React.Component {
 			SUI.suiTabs( el.querySelector( '.sui-tabs' ) );
 		}
 
-		const troubleshootLink = document.getElementById( 'troubleshooting-link' );
+		const troubleshootLink = document.getElementById(
+			'troubleshooting-link'
+		);
 		if ( troubleshootLink ) {
 			troubleshootLink.addEventListener( 'click', ( e ) => {
 				e.preventDefault();
-				jQuery( 'html, body' ).animate( { scrollTop: jQuery( '#troubleshooting-apache' ).offset().top }, 'slow' );
+				jQuery( 'html, body' ).animate(
+					{
+						scrollTop: jQuery( '#troubleshooting-apache' ).offset()
+							.top,
+					},
+					'slow'
+				);
 			} );
 		}
 	}
@@ -61,14 +69,26 @@ export default class ServerInstructions extends React.Component {
 		let button = '';
 
 		if ( this.context.isMember ) {
-			button = <Button url={ this.context.links.support.chat } target="blank" text={ __( 'Start a live chat.', 'wphb' ) } />;
+			button = (
+				<Button
+					url={ this.context.links.support.chat }
+					target="blank"
+					text={ __( 'Start a live chat.' ) }
+				/>
+			);
 		} else {
-			button = <Button url={ this.context.links.support.forum } target="blank" text={ __( 'Open a support ticket.', 'wphb' ) } />;
+			button = (
+				<Button
+					url={ this.context.links.support.forum }
+					target="blank"
+					text={ __( 'Open a support ticket.' ) }
+				/>
+			);
 		}
 
 		return (
 			<p className="sui-description">
-				{ __( 'Still having trouble?', 'wphb' ) } { button }
+				{ __( 'Still having trouble?' ) } { button }
 			</p>
 		);
 	}
@@ -85,24 +105,49 @@ export default class ServerInstructions extends React.Component {
 		}
 
 		const enableButton = this.props.htaccessWritten ? (
-			<Button onClick={ this.props.disableGzip } classes={ [ 'sui-button', 'sui-button-ghost', 'sui-margin-top' ] } text={ __( 'Deactivate', 'wphb' ) } />
+			<Button
+				onClick={ this.props.disableGzip }
+				classes={ [
+					'sui-button',
+					'sui-button-ghost',
+					'sui-margin-top',
+				] }
+				text={ __( 'Deactivate' ) }
+			/>
 		) : (
-			<Button onClick={ this.props.enableGzip } classes={ [ 'sui-button', 'sui-button-blue', 'sui-margin-top' ] } text={ __( 'Apply Rules', 'wphb' ) } />
+			<Button
+				onClick={ this.props.enableGzip }
+				classes={ [
+					'sui-button',
+					'sui-button-blue',
+					'sui-margin-top',
+				] }
+				text={ __( 'Apply Rules' ) }
+			/>
 		);
 
 		const noticeText = (
 			<p>
-				{ __( 'We tried applying the .htaccess rules automatically but we weren’t able to. Make sure your file permissions on your .htaccess file are set to 644, or', 'wphb' ) }
-				<Button url="#apache-config-manual" classes={ [ 'switch-manual' ] } text={ __( 'switch to manual mode', 'wphb' ) } />
-				{ __( 'and apply the rules yourself.', 'wphb' ) }
+				{ __(
+					'We tried applying the .htaccess rules automatically but we weren’t able to. Make sure your file permissions on your .htaccess file are set to 644, or'
+				) }
+				<Button
+					url="#apache-config-manual"
+					classes={ [ 'switch-manual' ] }
+					text={ __( 'switch to manual mode' ) }
+				/>
+				{ __( 'and apply the rules yourself.' ) }
 			</p>
 		);
 
 		return (
 			<div id="enable-cache-wrap" className={ classNames }>
-				{ this.props.htaccessError &&
-				<Notice classes={ [ 'sui-notice-warning', 'sui-notice-sm' ] } message={ noticeText } />
-				}
+				{ this.props.htaccessError && (
+					<Notice
+						classes={ [ 'sui-notice-warning', 'sui-notice-sm' ] }
+						message={ noticeText }
+					/>
+				) }
 				{ enableButton }
 			</div>
 		);
@@ -114,50 +159,103 @@ export default class ServerInstructions extends React.Component {
 	 * @return {*}  Tab content.
 	 */
 	renderApacheTabs() {
-		const hideEnableButton = this.props.fullyEnabled && ( ! this.props.htaccessWritten || 'nginx' === this.props.server );
+		const hideEnableButton =
+			this.props.fullyEnabled &&
+			( ! this.props.htaccessWritten || 'nginx' === this.props.server );
 
 		return (
-			<div id="wphb-server-instructions-apache" className="wphb-server-instructions" data-server="apache">
+			<div
+				id="wphb-server-instructions-apache"
+				className="wphb-server-instructions"
+				data-server="apache"
+			>
 				<div className="sui-tabs">
 					<div data-tabs>
-						<div className="active">{ __( 'Automatic', 'wphb' ) }</div>
-						<div>{ __( 'Manual', 'wphb' ) }</div>
+						<div className="active">{ __( 'Automatic' ) }</div>
+						<div>{ __( 'Manual' ) }</div>
 					</div>
 					<div data-panes>
 						<div className="active">
 							<span className="sui-description">
-								{ __( 'Hummingbird can automatically apply GZip compression for Apache servers by writing your .htaccess file. Alternately, switch to Manual to apply these rules yourself.', 'wphb' ) }
+								{ __(
+									'Hummingbird can automatically apply GZip compression for Apache servers by writing your .htaccess file. Alternately, switch to Manual to apply these rules yourself.'
+								) }
 							</span>
-							{ ( this.props.htaccessWritable && ! hideEnableButton ) &&
-							this.cacheWrap()
-							}
+							{ this.props.htaccessWritable &&
+								! hideEnableButton &&
+								this.cacheWrap() }
 						</div>
 						<div>
 							<div className="apache-instructions">
 								<p className="sui-description">
-									{ __( 'If you are unable to get the automated method working you can copy the generated code below into your .htaccess file to activate GZip compression.', 'wphb' ) }
+									{ __(
+										'If you are unable to get the automated method working you can copy the generated code below into your .htaccess file to activate GZip compression.'
+									) }
 								</p>
 
 								<ol className="wphb-listing wphb-listing-ordered">
-									<li>{ __( 'Copy & paste the generated code below into your .htaccess file', 'wphb' ) }</li>
 									<li>
-										{ __( 'Next', 'wphb' ) }, <Button url="#" text={ __( 're-check your GZip status', 'wphb' ) } /> { __( 'to see if it worked', 'wphb' ) }. <Button url="#" id="troubleshooting-link" text={ __( 'Still having issues?', 'wphb' ) } />
+										{ __(
+											'Copy & paste the generated code below into your .htaccess file'
+										) }
+									</li>
+									<li>
+										{ __( 'Next' ) },{ ' ' }
+										<Button
+											url="#"
+											text={ __(
+												're-check your GZip status'
+											) }
+										/>{ ' ' }
+										{ __( 'to see if it worked' ) }.{ ' ' }
+										<Button
+											url="#"
+											id="troubleshooting-link"
+											text={ __(
+												'Still having issues?'
+											) }
+										/>
 									</li>
 								</ol>
 
 								<div id="wphb-code-snippet">
-									<div id="wphb-code-snippet-apache" className="wphb-code-snippet">
+									<div
+										id="wphb-code-snippet-apache"
+										className="wphb-code-snippet"
+									>
 										<div className="wphb-block-content">
-											<pre className="sui-code-snippet">{ this.props.serverSnippets.apache }</pre>
+											<pre className="sui-code-snippet">
+												{
+													this.props.serverSnippets
+														.apache
+												}
+											</pre>
 										</div>
 									</div>
 								</div>
-								<p className="sui-description sui-margin-top" id="troubleshooting-apache"><strong>{ __( 'Troubleshooting', 'wphb' ) }</strong></p>
-								<p className="sui-description">{ __( 'If .htaccess does not work, and you have access to vhosts.conf or httpd.conf try this:', 'wphb' ) }</p>
+								<p
+									className="sui-description sui-margin-top"
+									id="troubleshooting-apache"
+								>
+									<strong>{ __( 'Troubleshooting' ) }</strong>
+								</p>
+								<p className="sui-description">
+									{ __(
+										'If .htaccess does not work, and you have access to vhosts.conf or httpd.conf try this:'
+									) }
+								</p>
 								<ol className="wphb-listing wphb-listing-ordered">
-									<li>{ __( 'Look for your site in the file and find the line that starts with &lt;Directory> - add the code above into that section and save the file.', 'wphb' ) }</li>
-									<li>{ __( 'Reload Apache.', 'wphb' ) }</li>
-									<li>{ __( "If you don't know where those files are, or you aren't able to reload Apache, you would need to consult with your hosting provider or a system administrator who has access to change the configuration of your server", 'wphb' ) }</li>
+									<li>
+										{ __(
+											'Look for your site in the file and find the line that starts with &lt;Directory> - add the code above into that section and save the file.'
+										) }
+									</li>
+									<li>{ __( 'Reload Apache.' ) }</li>
+									<li>
+										{ __(
+											"If you don't know where those files are, or you aren't able to reload Apache, you would need to consult with your hosting provider or a system administrator who has access to change the configuration of your server"
+										) }
+									</li>
 								</ol>
 								{ this.getSupportLink() }
 							</div>
@@ -175,20 +273,40 @@ export default class ServerInstructions extends React.Component {
 	 */
 	renderNginxTabs() {
 		return (
-			<div id="wphb-server-instructions-nginx" className="wphb-server-instructions" data-server="nginx">
-				<p className="sui-description">{ __( 'For NGINX servers:', 'wphb' ) }</p>
+			<div
+				id="wphb-server-instructions-nginx"
+				className="wphb-server-instructions"
+				data-server="nginx"
+			>
+				<p className="sui-description">
+					{ __( 'For NGINX servers:' ) }
+				</p>
 
 				<ol className="wphb-listing wphb-listing-ordered">
-					<li>{ __( 'Copy the generated code into your nginx.conf usually located at /etc/nginx/nginx.conf or /usr/local/nginx/conf/nginx.conf', 'wphb' ) }</li>
-					<li>{ __( 'Add the code above to the http or inside server section in the file.', 'wphb' ) }</li>
-					<li>{ __( 'Reload NGINX.', 'wphb' ) }</li>
+					<li>
+						{ __(
+							'Copy the generated code into your nginx.conf usually located at /etc/nginx/nginx.conf or /usr/local/nginx/conf/nginx.conf'
+						) }
+					</li>
+					<li>
+						{ __(
+							'Add the code above to the http or inside server section in the file.'
+						) }
+					</li>
+					<li>{ __( 'Reload NGINX.' ) }</li>
 				</ol>
 
-				<p className="sui-description">{ __( 'If you do not have access to your NGINX config files you will need to contact your hosting provider to make these changes.', 'wphb' ) }</p>
+				<p className="sui-description">
+					{ __(
+						'If you do not have access to your NGINX config files you will need to contact your hosting provider to make these changes.'
+					) }
+				</p>
 
 				{ this.getSupportLink() }
 
-				<pre className="sui-code-snippet">{ this.props.serverSnippets.nginx }</pre>
+				<pre className="sui-code-snippet">
+					{ this.props.serverSnippets.nginx }
+				</pre>
 			</div>
 		);
 	}
@@ -200,9 +318,18 @@ export default class ServerInstructions extends React.Component {
 	 */
 	renderIisTabs() {
 		return (
-			<div id="wphb-server-instructions-iis" className="wphb-server-instructions" data-server="iis">
+			<div
+				id="wphb-server-instructions-iis"
+				className="wphb-server-instructions"
+				data-server="iis"
+			>
 				<p className="sui-description">
-					{ __( 'For IIS 7 servers and above,', 'wphb' ) } <Button url="https://technet.microsoft.com/en-us/library/cc771003(v=ws.10).aspx" target="blank" text={ __( 'visit Microsoft TechNet', 'wphb' ) } />
+					{ __( 'For IIS 7 servers and above,' ) }{ ' ' }
+					<Button
+						url="https://technet.microsoft.com/en-us/library/cc771003(v=ws.10).aspx"
+						target="blank"
+						text={ __( 'visit Microsoft TechNet' ) }
+					/>
 				</p>
 			</div>
 		);
@@ -217,8 +344,17 @@ export default class ServerInstructions extends React.Component {
 		if ( this.props.htaccessWritten && this.props.fullyEnabled ) {
 			return (
 				<React.Fragment>
-					<Notice classes={ [ 'sui-notice-info' ] } message={ __( 'Automatic .htaccess rules have been applied.', 'wphb' ) } />
-					<Button classes={ [ 'sui-button', 'sui-button-ghost' ] } url="#" text={ __( 'Deactivate', 'wphb' ) } />
+					<Notice
+						classes={ [ 'sui-notice-info' ] }
+						message={ __(
+							'Automatic .htaccess rules have been applied.'
+						) }
+					/>
+					<Button
+						onClick={ this.props.disableGzip }
+						classes={ [ 'sui-button', 'sui-button-ghost' ] }
+						text={ __( 'Deactivate' ) }
+					/>
 				</React.Fragment>
 			);
 		}
@@ -226,13 +362,12 @@ export default class ServerInstructions extends React.Component {
 		return (
 			<React.Fragment>
 				{ 'apache' === this.props.currentServer &&
-				this.renderApacheTabs() }
+					this.renderApacheTabs() }
 
 				{ 'nginx' === this.props.currentServer &&
-				this.renderNginxTabs() }
+					this.renderNginxTabs() }
 
-				{ 'iis' === this.props.currentServer &&
-				this.renderIisTabs() }
+				{ 'iis' === this.props.currentServer && this.renderIisTabs() }
 			</React.Fragment>
 		);
 	}

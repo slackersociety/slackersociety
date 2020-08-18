@@ -20,7 +20,11 @@ const handleClearCache = () => {
 const showNotice = () => {
 	const notices = select( 'core/notices' ).getNotices();
 	if ( ! notices.find( ( notice ) => notice.id === 'wphb-gb-notice' ) ) {
-		dispatch( 'core/notices' ).createNotice( 'success', wphb.strings.notice, { id: 'wphb-gb-notice' } );
+		dispatch( 'core/notices' ).createNotice(
+			'success',
+			wphb.strings.notice,
+			{ id: 'wphb-gb-notice' }
+		);
 	}
 };
 
@@ -32,8 +36,12 @@ const showNotice = () => {
  */
 const MyPluginPostStatusInfo = () => (
 	<PluginPostStatusInfo className="wphb-clear-cache">
-		<input type="submit" value={ wphb.strings.button } onClick={ handleClearCache }
-			className="components-button is-button is-default is-large editor-post-trash" />
+		<input
+			type="submit"
+			value={ wphb.strings.button }
+			onClick={ handleClearCache }
+			className="components-button is-button is-default is-large editor-post-trash"
+		/>
 	</PluginPostStatusInfo>
 );
 

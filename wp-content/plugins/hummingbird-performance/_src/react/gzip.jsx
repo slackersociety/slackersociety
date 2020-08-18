@@ -78,7 +78,8 @@ class GzipPage extends React.Component {
 		this.setState( { loading: true } );
 
 		this.state.api.post( 'gzip_rules', action ).then( ( response ) => {
-			this.props.wphbData.module.htaccess_written = response.htaccess_written; // Overwrite the prop.
+			this.props.wphbData.module.htaccess_written =
+				response.htaccess_written; // Overwrite the prop.
 
 			this.setState( {
 				loading: false,

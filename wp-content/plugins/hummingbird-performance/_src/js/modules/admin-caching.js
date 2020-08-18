@@ -1,3 +1,7 @@
+/* global WPHB_Admin */
+/* global wphb */
+/* global wphbCachingStrings */
+
 /**
  * Internal dependencies
  */
@@ -6,7 +10,6 @@ import Fetcher from '../utils/fetcher';
 ( function( $ ) {
 	'use strict';
 	WPHB_Admin.caching = {
-
 		module: 'caching',
 		selectedServer: '',
 		serverSelector: null,
@@ -28,14 +31,17 @@ import Fetcher from '../utils/fetcher';
 			self.serverSelector = $( '#wphb-server-type' );
 			self.selectedServer = self.serverSelector.val();
 
-			/** @var {array} wphbCachingStrings */
+			/** @member {Array} wphbCachingStrings */
 			if ( wphbCachingStrings ) {
 				self.strings = wphbCachingStrings;
 			}
 
 			if ( hash && $( hash ).length ) {
 				setTimeout( function() {
-					$( 'html, body' ).animate( { scrollTop: $( hash ).offset().top }, 'slow' );
+					$( 'html, body' ).animate(
+						{ scrollTop: $( hash ).offset().top },
+						'slow'
+					);
 				}, 300 );
 			} else if ( '#connect-cloudflare' === hash ) {
 				self.setCloudflare();
@@ -54,10 +60,14 @@ import Fetcher from '../utils/fetcher';
 			} );
 
 			// Clear page cache.
-			pageCachingForm.on( 'click', '.sui-box-header .sui-button', ( e ) => {
-				e.preventDefault();
-				self.clearCache( 'page_cache', pageCachingForm );
-			} );
+			pageCachingForm.on(
+				'click',
+				'.sui-box-header .sui-button',
+				( e ) => {
+					e.preventDefault();
+					self.clearCache( 'page_cache', pageCachingForm );
+				}
+			);
 
 			/**
 			 * Toggle clear cache settings.
@@ -77,11 +87,13 @@ import Fetcher from '../utils/fetcher';
 			 *
 			 * @since 2.1.0
 			 */
-			const cancelPreload = document.getElementById( 'wphb-cancel-cache-preload' );
+			const cancelPreload = document.getElementById(
+				'wphb-cancel-cache-preload'
+			);
 			if ( cancelPreload ) {
 				cancelPreload.addEventListener( 'click', function( e ) {
 					e.preventDefault();
-					Fetcher.caching.cancelPreload();
+					Fetcher.common.call( 'wphb_preload_cancel' );
 					window.location.reload();
 				} );
 			}
@@ -105,13 +117,19 @@ import Fetcher from '../utils/fetcher';
 
 			// Init server instructions tabs.
 			$( '.wphb-server-instructions' ).each( function() {
-				self.serverInstructions[ $( this ).data( 'server' ) ] = $( this );
+				self.serverInstructions[ $( this ).data( 'server' ) ] = $(
+					this
+				);
 			} );
 			self.showServerInstructions( this.selectedServer );
 
 			// Init code snippets.
-			self.snippets.apache = $( '.apache-instructions' ).find( 'pre.sui-code-snippet' );
-			self.snippets.nginx = $( '#wphb-server-instructions-nginx' ).find( 'pre.sui-code-snippet' );
+			self.snippets.apache = $( '.apache-instructions' ).find(
+				'pre.sui-code-snippet'
+			);
+			self.snippets.nginx = $( '#wphb-server-instructions-nginx' ).find(
+				'pre.sui-code-snippet'
+			);
 
 			// Server type changed.
 			self.serverSelector.change( function() {
@@ -133,30 +151,39 @@ import Fetcher from '../utils/fetcher';
 
 			// Expiry value changed.
 			expiryForm.on( 'change', 'select[name^="set-expiry"]', function() {
-				self.reloadSnippets( self.getExpiryTimes( self.selectedExpiryType ) );
+				self.reloadSnippets(
+					self.getExpiryTimes( self.selectedExpiryType )
+				);
 				$( '#wphb-expiry-change-notice' ).slideDown();
 			} );
 
 			// Re-check expiry button clicked.
-			cachingHeader.on( 'click', 'a.sui-button', ( e ) => {
+			cachingHeader.on( 'click', 'button.sui-button', ( e ) => {
 				e.preventDefault();
+				e.target.classList.add( 'sui-button-onload-text' );
 
-				const spinner = cachingHeader.find( '.spinner' );
-				const button = cachingHeader.find( 'a.sui-button' );
-
-				button.addClass( 'disabled' );
-				spinner.addClass( 'visible' );
-
-				Fetcher.caching.recheckExpiry()
+				Fetcher.common
+					.call( 'wphb_caching_recheck_expiry' )
 					.then( ( response ) => {
-						button.removeClass( 'disabled' );
-						spinner.removeClass( 'visible' );
-
-						if ( 'undefined' !== typeof response && response.success ) {
-							WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success', self.strings.successRecheckStatus );
+						e.target.classList.remove( 'sui-button-onload-text' );
+						if (
+							'undefined' !== typeof response &&
+							response.success
+						) {
+							WPHB_Admin.notices.show(
+								'wphb-ajax-update-notice',
+								true,
+								'success',
+								self.strings.successRecheckStatus
+							);
 							self.reloadExpiryTags( response.expiry_values );
 						} else {
-							WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'error', self.strings.errorRecheckStatus );
+							WPHB_Admin.notices.show(
+								'wphb-ajax-update-notice',
+								true,
+								'error',
+								self.strings.errorRecheckStatus
+							);
 						}
 					} );
 			} );
@@ -172,37 +199,59 @@ import Fetcher from '../utils/fetcher';
 				button.addClass( 'disabled' );
 				spinner.addClass( 'visible' );
 
-				const expiry_times = self.getExpiryTimes( self.selectedExpiryType );
-				Fetcher.caching.setExpiration( expiry_times );
+				Fetcher.caching.setExpiration(
+					self.getExpiryTimes( self.selectedExpiryType )
+				);
 
 				// Set timeout to allow new expiry values to be saved.
-				setTimeout(
-					function() {
-						Fetcher.caching.updateHtaccess()
-							.then( ( response ) => {
-								button.removeClass( 'disabled' );
-								spinner.removeClass( 'visible' );
-								notice.slideUp( 'slow' );
+				setTimeout( function() {
+					Fetcher.common
+						.call( 'wphb_caching_update_htaccess' )
+						.then( ( response ) => {
+							button.removeClass( 'disabled' );
+							spinner.removeClass( 'visible' );
+							notice.slideUp( 'slow' );
 
-								if ( 'undefined' !== typeof response && response.success ) {
-									WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success', wphb.strings.htaccessUpdated );
-								} else {
-									WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'error', self.strings.htaccessUpdatedFailed );
-								}
-							} );
-					}, 1000 );
+							if (
+								'undefined' !== typeof response &&
+								response.success
+							) {
+								WPHB_Admin.notices.show(
+									'wphb-ajax-update-notice',
+									true,
+									'success',
+									wphb.strings.htaccessUpdated
+								);
+							} else {
+								WPHB_Admin.notices.show(
+									'wphb-ajax-update-notice',
+									true,
+									'error',
+									self.strings.htaccessUpdatedFailed
+								);
+							}
+						} );
+				}, 1000 );
 			} );
 
 			// View code clicked (when rules already in .htaccess and expiry values are updated).
 			$( '#view-snippet-code' ).on( 'click', function( e ) {
 				e.preventDefault();
-				const serverInstructions = $( '#wphb-server-instructions-' + self.selectedServer.toLowerCase() );
+				const serverInstructions = $(
+					'#wphb-server-instructions-' +
+						self.selectedServer.toLowerCase()
+				);
 				const selectedServer = self.selectedServer.toLowerCase();
 
 				$( '#auto-' + selectedServer ).removeClass( 'active' );
-				$( '#manual-' + selectedServer ).trigger( 'click' ).addClass( 'active' );
+				$( '#manual-' + selectedServer )
+					.trigger( 'click' )
+					.addClass( 'active' );
 
-				$( 'html, body' ).animate( { scrollTop: serverInstructions.offset().top - 50 }, 'slow' );
+				$( 'html, body' ).animate(
+					{ scrollTop: serverInstructions.offset().top - 50 },
+					'slow'
+				);
 			} );
 
 			// Activate button clicked.
@@ -210,14 +259,14 @@ import Fetcher from '../utils/fetcher';
 				e.preventDefault();
 				$( this ).addClass( 'sui-button-onload' );
 				// Update expiration times.
-				const expiry_times = self.getExpiryTimes( self.selectedExpiryType );
-				Fetcher.caching.setExpiration( expiry_times );
+				Fetcher.caching.setExpiration(
+					self.getExpiryTimes( self.selectedExpiryType )
+				);
 				const redirect = $( this ).attr( 'href' );
 				// Set timeout to allow new expiry values to be saved.
-				setTimeout(
-					function() {
-						window.location = redirect;
-					}, 1000 );
+				setTimeout( function() {
+					window.location = redirect;
+				}, 1000 );
 			} );
 
 			/**
@@ -234,14 +283,23 @@ import Fetcher from '../utils/fetcher';
 			// "# of your cache types don’t meet the recommended expiry period" notice clicked.
 			$( '#configure-link' ).on( 'click', function( e ) {
 				e.preventDefault();
-				$( 'html, body' ).animate( { scrollTop: $( '#wphb-box-caching-settings' ).offset().top }, 'slow' );
+				$( 'html, body' ).animate(
+					{
+						scrollTop: $( '#wphb-box-caching-settings' ).offset()
+							.top,
+					},
+					'slow'
+				);
 			} );
 
 			// Cloudflare blue notice dismiss link
 			$( '#dismiss-cf-notice' ).on( 'click', function( e ) {
 				e.preventDefault();
-				Fetcher.notice.dismissCloudflareDash();
-				$( '.cf-dash-notice' ).slideUp().parent().addClass( 'no-background-image' );
+				Fetcher.common.call( 'wphb_cf_notice_dismiss' );
+				$( '.cf-dash-notice' )
+					.slideUp()
+					.parent()
+					.addClass( 'no-background-image' );
 			} );
 
 			/**
@@ -259,7 +317,7 @@ import Fetcher from '../utils/fetcher';
 			/**
 			 * RSS CACHING
 			 *
-			 * @since 1.8
+			 * @since 1.8.0
 			 */
 
 			// Parse rss cache settings.
@@ -267,11 +325,114 @@ import Fetcher from '../utils/fetcher';
 				e.preventDefault();
 
 				// Make sure a positive value is always reflected for the rss expiry time input.
-				const rss_expiry_time = rssForm.find( '#rss-expiry-time' );
-				rss_expiry_time.val( Math.abs( rss_expiry_time.val() ) );
+				const rssExpiryTime = rssForm.find( '#rss-expiry-time' );
+				rssExpiryTime.val( Math.abs( rssExpiryTime.val() ) );
 
 				self.saveSettings( 'rss', rssForm );
 			} );
+
+			/**
+			 * INTEGRATIONS
+			 *
+			 * @since 2.5.0
+			 */
+			const redisForm = document.getElementById( 'redis-settings-form' );
+			if ( redisForm ) {
+				redisForm.addEventListener( 'submit', ( e ) => {
+					e.preventDefault();
+
+					const host 		= document.getElementById( 'redis-host' ).value;
+					const port 		= document.getElementById( 'redis-port' ).value;
+					const pass 		= document.getElementById( 'redis-password' ).value;
+					const connected = document.getElementById( 'redis-connected' ).value;
+
+					// Submit via Fetcher. then close modal.
+					Fetcher.caching
+						.redisSaveSettings( host, port, pass )
+						.then( ( response ) => {
+							if (
+								'undefined' !== typeof response &&
+								response.success
+							) {
+								window.location.search += ( connected === '1' )? '&updated=redis-auth-2' : '&updated=redis-auth';
+							} else {
+								const notice = document.getElementById(
+									'redis-connect-notice-on-modal'
+								);
+								notice.innerHTML = response.message;
+								notice.parentNode.classList.remove(
+									'sui-hidden'
+								);
+								notice.parentNode.parentNode.classList.add(
+									'sui-spacing-top--10'
+								);
+							}
+						} );
+				} );
+			}
+
+			const objectCache = document.getElementById( 'object-cache' );
+			if ( objectCache ) {
+				objectCache.addEventListener( 'change', ( e ) => {
+					// Track feature enable.
+					if ( e.target.checked ) {
+						WPHB_Admin.Tracking.enableFeature( 'Redis Cache' );
+					} else {
+						WPHB_Admin.Tracking.disableFeature( 'Redis Cache' );
+					}
+
+					Fetcher.caching
+						.redisObjectCache( e.target.checked )
+						.then( ( response ) => {
+							if (
+								'undefined' !== typeof response &&
+								response.success
+							) {
+								window.location.search +=
+									'&updated=redis-object-cache';
+							} else {
+								WPHB_Admin.notices.show(
+									'wphb-ajax-update-notice',
+									true,
+									'error',
+									wphb.strings.errorSettingsUpdate
+								);
+							}
+						} );
+				} );
+			}
+
+			const objectCachePurge = document.getElementById(
+				'clear-redis-cache'
+			);
+			if ( objectCachePurge ) {
+				objectCachePurge.addEventListener( 'click', () => {
+					objectCachePurge.classList.add( 'sui-button-onload-text' );
+					Fetcher.common
+						.call( 'wphb_redis_cache_purge' )
+						.then( () => {
+							objectCachePurge.classList.remove(
+								'sui-button-onload-text'
+							);
+							WPHB_Admin.notices.show(
+								'wphb-ajax-update-notice',
+								true,
+								'success',
+								wphbCachingStrings.successRedisPurge
+							);
+						} );
+				} );
+			}
+
+			const redisCacheDisable = document.getElementById(
+				'redis-disconnect'
+			);
+			if ( redisCacheDisable ) {
+				redisCacheDisable.addEventListener( 'click', ( e ) => {
+					e.preventDefault();
+					this.redisDisable();
+				} );
+			}
 
 			/**
 			 * SETTINGS
@@ -284,7 +445,10 @@ import Fetcher from '../utils/fetcher';
 				e.preventDefault();
 
 				// Hide the notice if it is showing.
-				const detection = $( 'input[name="detection"]:checked', settingsForm ).val();
+				const detection = $(
+					'input[name="detection"]:checked',
+					settingsForm
+				).val();
 				if ( 'auto' === detection || 'none' === detection ) {
 					$( '.wphb-notice.notice-info' ).slideUp();
 				}
@@ -296,6 +460,17 @@ import Fetcher from '../utils/fetcher';
 		},
 
 		/**
+		 * Disable Redis cache.
+		 *
+		 * @since 2.5.0
+		 */
+		redisDisable: () => {
+			Fetcher.common.call( 'wphb_redis_disconnect' ).then( () => {
+				window.location.search += '&updated=redis-disconnect';
+			} );
+		},
+
+		/**
 		 * Process form submit from page caching, rss and settings forms.
 		 *
 		 * @since 1.9.0
@@ -304,21 +479,31 @@ import Fetcher from '../utils/fetcher';
 		 * @param {Object} form    Form.
 		 */
 		saveSettings: ( module, form ) => {
-			const spinner = form.find( '.sui-box-footer .spinner' );
-			spinner.addClass( 'visible' );
+			const button = form.find( 'button.sui-button' );
+			button.addClass( 'sui-button-onload-text' );
 
-			Fetcher.caching.saveSettings( module, form.serialize() )
+			Fetcher.caching
+				.saveSettings( module, form.serialize() )
 				.then( ( response ) => {
-					spinner.removeClass( 'visible' );
+					button.removeClass( 'sui-button-onload-text' );
 
 					if ( 'undefined' !== typeof response && response.success ) {
 						if ( 'page_cache' === module ) {
 							window.location.search += '&updated=true';
 						} else {
-							WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success' );
+							WPHB_Admin.notices.show(
+								'wphb-ajax-update-notice',
+								true,
+								'success'
+							);
 						}
 					} else {
-						WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'error', wphb.strings.errorSettingsUpdate );
+						WPHB_Admin.notices.show(
+							'wphb-ajax-update-notice',
+							true,
+							'error',
+							wphb.strings.errorSettingsUpdate
+						);
 					}
 				} );
 		},
@@ -332,53 +517,84 @@ import Fetcher from '../utils/fetcher';
 		 * @param {Object} form    Form from which the call was made.
 		 */
 		clearCache: ( module, form ) => {
-			const spinner = form.find( '.sui-box-header .spinner' );
-			spinner.addClass( 'visible' );
+			const button = form.find( '.sui-box-header .sui-button' );
+			button.addClass( 'sui-button-onload-text' );
 
-			Fetcher.caching.clearCache( module )
-				.then( ( response ) => {
-					if ( 'undefined' !== typeof response && response.success ) {
-						if ( 'page_cache' === module ) {
-							$( '.box-caching-summary span.sui-summary-large' ).html( '0' );
-							WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success', wphbCachingStrings.successPageCachePurge );
-						} else if ( 'gravatar' === module ) {
-							WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'success', wphbCachingStrings.successGravatarPurge );
-						}
-					} else {
-						WPHB_Admin.notices.show( 'wphb-ajax-update-notice', true, 'error', wphbCachingStrings.errorCachePurge );
+			Fetcher.caching.clearCache( module ).then( ( response ) => {
+				if ( 'undefined' !== typeof response && response.success ) {
+					if ( 'page_cache' === module ) {
+						$( '.box-caching-summary span.sui-summary-large' ).html(
+							'0'
+						);
+						WPHB_Admin.notices.show(
+							'wphb-ajax-update-notice',
+							true,
+							'success',
+							wphbCachingStrings.successPageCachePurge
+						);
+					} else if ( 'gravatar' === module ) {
+						WPHB_Admin.notices.show(
+							'wphb-ajax-update-notice',
+							true,
+							'success',
+							wphbCachingStrings.successGravatarPurge
+						);
 					}
+				} else {
+					WPHB_Admin.notices.show(
+						'wphb-ajax-update-notice',
+						true,
+						'error',
+						wphbCachingStrings.errorCachePurge
+					);
+				}
 
-					spinner.removeClass( 'visible' );
-				} );
+				button.removeClass( 'sui-button-onload-text' );
+			} );
 		},
 
+		/**
+		 * Set server type.
+		 *
+		 * @param {string} value
+		 */
 		setServer( value ) {
 			Fetcher.caching.setServer( value );
 		},
 
+		/**
+		 * Set Cloudflare.
+		 */
 		setCloudflare() {
-			$( '#wphb-server-type' ).val( 'cloudflare' ).trigger( 'sui:change' );
+			$( '#wphb-server-type' )
+				.val( 'cloudflare' )
+				.trigger( 'sui:change' );
 			this.hideCurrentInstructions();
 			this.setServer( 'cloudflare' );
 			this.showServerInstructions( 'cloudflare' );
 			this.selectedServer = 'cloudflare';
 
 			setTimeout( function() {
-				$( 'html, body' ).animate( { scrollTop: $( '#cloudflare-steps' ).offset().top }, 'slow' );
+				$( 'html, body' ).animate(
+					{ scrollTop: $( '#cloudflare-steps' ).offset().top },
+					'slow'
+				);
 			}, 300 );
 		},
 
-		reloadExpiryTags( expiry_values ) {
-			for ( const k in expiry_values ) {
-				if ( expiry_values.hasOwnProperty( k ) ) {
-					$( '#wphb-caching-expiry-' + k ).text( expiry_values[ k ] );
+		reloadExpiryTags( expiryValues ) {
+			for ( const k in expiryValues ) {
+				if ( expiryValues.hasOwnProperty( k ) ) {
+					$( '#wphb-caching-expiry-' + k ).text( expiryValues[ k ] );
 				}
 			}
 		},
 
 		hideCurrentInstructions() {
 			if ( this.serverInstructions[ this.selectedServer ] ) {
-				this.serverInstructions[ this.selectedServer ].addClass( 'sui-hidden' );
+				this.serverInstructions[ this.selectedServer ].addClass(
+					'sui-hidden'
+				);
 			}
 		},
 
@@ -395,44 +611,47 @@ import Fetcher from '../utils/fetcher';
 			}
 		},
 
-		reloadSnippets( expiry_times ) {
+		reloadSnippets( expiryTimes ) {
 			const self = this;
 			const stop = false;
 
 			for ( const i in self.snippets ) {
 				if ( self.snippets.hasOwnProperty( i ) ) {
-					Fetcher.caching.setExpiration( expiry_times );
-					Fetcher.caching.reloadSnippets( i, expiry_times )
+					Fetcher.caching.setExpiration( expiryTimes );
+					Fetcher.caching
+						.reloadSnippets( i, expiryTimes )
 						.then( ( response ) => {
 							if ( stop ) {
 								return;
 							}
 
-							self.snippets[ response.type ].text( response.code );
+							self.snippets[ response.type ].text(
+								response.code
+							);
 						} );
 				}
 			}
 		},
 
 		getExpiryTimes( type ) {
-			let expiry_times = [];
+			let expiryTimes = [];
 			if ( 'all' === type ) {
 				const all = $( '#set-expiry-all' ).val();
-				expiry_times = {
+				expiryTimes = {
 					expiry_javascript: all,
 					expiry_css: all,
 					expiry_media: all,
 					expiry_images: all,
 				};
 			} else {
-				expiry_times = {
+				expiryTimes = {
 					expiry_javascript: $( '#set-expiry-javascript' ).val(),
 					expiry_css: $( '#set-expiry-css' ).val(),
 					expiry_media: $( '#set-expiry-media' ).val(),
 					expiry_images: $( '#set-expiry-images' ).val(),
 				};
 			}
-			return expiry_times;
+			return expiryTimes;
 		},
 	};
-}( jQuery ) );
+} )( jQuery );
